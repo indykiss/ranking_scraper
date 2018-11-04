@@ -2,9 +2,15 @@ Started Nov 4
 
 # RankingScraper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ranking_scraper`. To experiment with that code, run `bin/console` for an interactive prompt.
+Project plan:
 
-TODO: Delete this and the text above, and describe your gem
+- Scrap the Forbes Global 2000 largest company list
+- CLI:
+- Hi! Welcome to Indy's web scraper of *insert thing being scraped. Please input rank number and I will provide which company (or thing) has that ranking. 
+- To add complexity... Would you like to know Forbes's top 100 largest public companies, all of the list, or a specific rank? 
+- If top 100, output top 100 
+- If all, output all 
+- If rank number, output the company in that rank 
 
 ## Installation
 
