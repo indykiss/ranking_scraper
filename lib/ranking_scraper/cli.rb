@@ -1,4 +1,5 @@
-class CLI 
+
+class RankingScraper::CLI 
   
   def call 
     # I guess this connects the CLI to the other code 
