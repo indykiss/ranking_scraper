@@ -11,6 +11,18 @@ Project plan:
 - If top 100, output top 100 
 - If all, output all 
 - If rank number, output the company in that rank 
+- 
+
+Notes from Avi's video walkthrough:
+1. Plan project, expected outcome 
+2. Start with project structure. Google is ok. Look at guides and the restaurant example. 
+3. Start with entry point- the file run 
+4. Force that into CLI interface 
+5. Stub out interface 
+6. Make things real
+7. Make objects 
+8. Program
+9. (what?)
 
 ## Installation
 
