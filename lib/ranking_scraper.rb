@@ -30,12 +30,12 @@ class CLI
    end 
 end 
 
-class scraper 
+class Scraper 
   # I connect to the website we're looking to scrape with Nokogiria  
 end 
 
-class ranking 
-  # I take the info from website and format it.
+class Ranking 
+  # I take the info from website and formats it for presenting to user with CLI. 
 end 
 
 class 
