@@ -11,11 +11,18 @@ class RankingScraper::Ranking
       rank.css("name").text)
   end 
   
-  def initialize(rank, name)
+  def initialize(rank=nil, name=nil)
     @rank = rank 
     @name = name 
     @@all << self
   end 
   
+  def self.all
+    @@all 
+  end 
+  
+  binding.pry 
   
 end 
+
+

@@ -3,11 +3,11 @@
 class RankingScraper::Scraper 
 
   def connect_page 
-   Nokogiri::HTML(open(https://www.forbes.com/global2000/list/))
+   Nokogiri::HTML(open(http://books.toscrape.com/))
   end 
   
   def scrape_site 
-    self.get_page.css("div#list_table")
+    self.get_page.css("div.container-fluid.page")
   end 
 
   def data_to_info
