@@ -13,8 +13,8 @@ class RankingScraper::Ranking
   end 
   
   def initialize(book_name = nil, price = nil, availability)
-    @book_name = rank 
-    @price = name 
+    @book_name = book_name 
+    @price = price 
     @availability = availability
     @@all << self
   end 
