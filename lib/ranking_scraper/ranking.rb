@@ -7,9 +7,9 @@ class RankingScraper::Ranking
   
   def self.new_from_index_page(rank)
     self.new(
-      rank.css("").text, 
-      rank.css("").text,
-      rank.css("").text)
+      rank.css("h3").text, 
+      rank.css("product_price").text,
+      rank.css("instock availability").text)
   end 
   
   def initialize(book_name = nil, price = nil, availability)
