@@ -2,26 +2,26 @@
 class RankingScraper::Ranking 
   # I take the info from website and formats it for presenting to user with CLI. 
   
-  attr_accessor :company_name, :rank, :country, :profits, :sales
+  attr_accessor :book_name, :price, :availability
   @@all = []
   
   def self.new_from_index_page(rank)
     self.new(
-      rank.css("rank").text, 
-      rank.css("name").text)
+      rank.css("").text, 
+      rank.css("").text,
+      rank.css("").text)
   end 
   
-  def initialize(rank=nil, name=nil)
-    @rank = rank 
-    @name = name 
+  def initialize(book_name = nil, price = nil, availability)
+    @book_name = rank 
+    @price = name 
+    @availability = availability
     @@all << self
   end 
   
   def self.all
     @@all 
   end 
-  
-  binding.pry 
   
 end 
 

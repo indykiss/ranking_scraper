@@ -14,4 +14,5 @@ class RankingScraper::Scraper
    scrape_site.each do |rank|
       RankingScraper::Scraper.new_from_index_page(rank)    
   end 
+  
 end 
