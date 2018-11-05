@@ -2,7 +2,8 @@
 class RankingScraper::CLI 
   
   def call 
-    RankingScraper::Scraper.new
+    RankingScraper::Scraper.new.data_to_info
+    puts "Welcome to book scraper."
   # we connect this with the other classes
   end 
   
