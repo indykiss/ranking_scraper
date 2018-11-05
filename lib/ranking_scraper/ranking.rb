@@ -5,11 +5,11 @@ class RankingScraper::Ranking
   attr_accessor :book_name, :price, :availability
   @@all = []
   
-  def self.new_from_index_page(rank)
+  def self.new_from_index_page(data)
     self.new(
-      rank.css("h3").text, 
-      rank.css("product_price").text,
-      rank.css("instock availability").text)
+      @book_name = data.css("h3").text, 
+      @product_price = data.css("product_price").text,
+      @availability = data.css("instock availability").text)
   end 
   
   def initialize(book_name = nil, price = nil, availability)
@@ -22,6 +22,9 @@ class RankingScraper::Ranking
   def self.all
     @@all 
   end 
+  
+  def book_name 
+    @book_name = 
   
 end 
 

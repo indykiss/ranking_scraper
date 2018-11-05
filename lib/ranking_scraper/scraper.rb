@@ -8,6 +8,7 @@ class RankingScraper::Scraper
   
   def scrape_site 
     self.get_page.css("div.container-fluid.page")
+    #could be div.col.sm-8.col-md-9
   end 
 
   def data_to_info
