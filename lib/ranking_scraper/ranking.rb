@@ -24,7 +24,16 @@ class RankingScraper::Ranking
   end 
   
   def book_name 
-    @book_name = 
+    @book_name
+  end 
+  
+  def price
+    @price 
+  end 
+  
+  def availability
+    @availability
+  end 
   
 end 
 

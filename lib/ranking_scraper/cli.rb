@@ -2,6 +2,7 @@
 class RankingScraper::CLI 
   
   def call 
+    RankingScraper::Scraper.new
   # we connect this with the other classes
   end 
   
