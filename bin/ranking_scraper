@@ -1,0 +1,5 @@
+
+
+require_relative "../lib/ranking_scraper"
+
+RankingScraper::CLI.new.call
