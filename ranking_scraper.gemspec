@@ -1,4 +1,5 @@
 require_relative "./lib/ranking_scraper/version.rb"
+require 'nokogiri'
 
 
 lib = File.expand_path("../lib", __FILE__)
