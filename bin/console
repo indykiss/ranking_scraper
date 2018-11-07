@@ -2,10 +2,6 @@
 
 require "bundler/setup"
 require "ranking_scraper"
-require_relative "../lib/cli.rb"
-require_relative "../lib/ranking.rb"
-require_relative "../lib/scraper.rb"
-require_relative "../lib/version.rb"
 
 
 # You can add fixtures and/or initialization code here to make experimenting

@@ -1,4 +1,3 @@
-require "ranking_scraper/version.rb"
 require_relative '../config/environment.rb'
 
 

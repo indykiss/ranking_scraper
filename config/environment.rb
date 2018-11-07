@@ -1,9 +1,6 @@
 require 'nokogiri'
 require 'pry'
 require 'open-uri'
-#require 'capybara'
-#require 'capybara/poltergeist'
-
 
 require_relative '../lib/ranking_scraper/scraper.rb'
 require_relative '../lib/ranking_scraper/version.rb'
