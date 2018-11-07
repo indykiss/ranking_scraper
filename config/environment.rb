@@ -1,8 +1,8 @@
 #require 'pry' 
 require 'nokogiri'
 require 'open-uri'
-require 'capybara'
-require 'capybara/poltergeist'
+#require 'capybara'
+#require 'capybara/poltergeist'
 
 
 require_relative '../lib/ranking_scraper/scraper'

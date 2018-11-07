@@ -1,6 +1,7 @@
 Project plan:
 
-Scrap the Forbes Global 2000 largest company list CLI: Hi! Welcome to Indy's web scraper of *insert thing being scraped. Please input rank number and I will provide which company (or thing) has that ranking. To add complexity... Would you like to know Forbes's top 100 largest public companies, all of the list, or a specific rank? If top 100, output top 100 If all, output all If rank number, output the company in that rank Notes from Avi's video walkthrough:
+Probably not doing now... 
+Hi! Welcome to Indy's web scraper of *insert thing being scraped. Please input rank number and I will provide which company (or thing) has that ranking. To add complexity... Would you like to know Forbes's top 100 largest public companies, all of the list, or a specific rank? If top 100, output top 100 If all, output all If rank number, output the company in that rank Notes from Avi's video walkthrough:
 
 Plan project + expected outcome 
 Start with project structure. Google is ok. Look at guides and the restaurant example. 
