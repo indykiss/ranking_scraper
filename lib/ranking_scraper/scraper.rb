@@ -13,6 +13,9 @@ class RankingScraper::Scraper
       :product_price = attribute.css("div.product_price").text.strip,
       :availability = attribute.css("p.instock.availability").text.strip
     }
+    
+    # Ok so I'm here now in terms of 11/7 on 3:40 pm
+    
   end 
 
   def data_to_info
