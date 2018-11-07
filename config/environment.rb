@@ -1,5 +1,5 @@
-require 'pry'
 require 'nokogiri'
+require 'pry'
 require 'open-uri'
 #require 'capybara'
 #require 'capybara/poltergeist'
