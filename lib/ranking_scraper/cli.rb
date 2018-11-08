@@ -7,11 +7,11 @@ class RankingScraper::CLI
     puts "If the book is not available, we will let you know."
     input = gets.strip.to_i
     
-    if input == #name of a book
+    #if input == #name of a book
       # output price & availability of book
       
-    else if input == #none of the books 
-      puts "Sorry, we don't have that book."
+    #else if input == #none of the books 
+    #  puts "Sorry, we don't have that book."
   end 
   
   def start 
