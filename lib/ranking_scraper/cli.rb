@@ -2,14 +2,13 @@
 class RankingScraper::CLI 
   
   def call 
-    RankingScraper::Scraper.new.data_to_info
     puts "Welcome to book scraper."
-  # we connect this with the other classes
+    puts "What can I do for you?"
   end 
   
   def start 
     # Hi. So here are like 2-3 options maybe. Maybe just one option. 
-    # input = gets.strip.to_i 
+    # input = gets.strip.to_i
     end 
 
   def print_info 
