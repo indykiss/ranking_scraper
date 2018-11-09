@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'pry'
 require 'open-uri'
+require 'HTTPARTY'
 
 require_relative '../lib/ranking_scraper/scraper.rb'
 require_relative '../lib/ranking_scraper/version.rb'
