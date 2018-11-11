@@ -22,6 +22,7 @@ class CLI
     while input != "exit"
       input = gets.strip
     
+      # I'm going to hard code this for now for the ~10 books on the page
       case input 
         when "Great Gatsby"
           puts "The Great Gatsby is available and costs $19."
