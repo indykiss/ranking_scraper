@@ -5,17 +5,13 @@ class ScraperModule::CLI
     puts "Welcome to book scraper."
     fake_list
     puts "Please input the name of the book you're looking for, and we will provide price and availability."
-    
     fake_response
     
-    
     #input = gets.strip.to_i
-    
-    #if input == #name of a book
-      # output price & availability of book
-      
-    #else if input == #none of the books 
-    #  puts "Sorry, we don't have that book."
+      #if input == #name of a book
+        # output price & availability of book
+          #else if input == #none of the books 
+          #  puts "Sorry, we don't have that book."
   end 
   
   def fake_list 
