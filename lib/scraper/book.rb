@@ -1,5 +1,7 @@
 class ScraperModule::Book 
-  attr_accessor :book_name, :price, :availability
+  attr_accessor :name, :price, :availability
+  @@all = []
+
 
   # I take the info from website and formats it for presenting to user with CLI. 
   
@@ -22,15 +24,25 @@ class ScraperModule::Book
     
   end 
   
+  def name 
+    @name
+  end 
+  
+  def price
+    @price 
+  end 
+  
+  def availability
+    @availability
+  end 
+  
 end 
 
 
   
   
 =begin
-  attr_accessor :book_name, :price, :availability
-  @@all = []
-  
+
   def self.new_from_index_page(data)
     self.new(
       @book_name = data.css("h3").text, 
@@ -43,22 +55,6 @@ end
     @price = price 
     @availability = availability
     @@all << self.book_name
-  end 
-  
-  def self.all
-    @@all 
-  end 
-  
-  def book_name 
-    @book_name
-  end 
-  
-  def price
-    @price 
-  end 
-  
-  def availability
-    @availability
   end 
   
 end 
