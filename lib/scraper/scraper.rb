@@ -1,21 +1,11 @@
-
-
-
-
 class Scraper 
 
   
   def scraper 
     url = "http://books.toscrape.com/"
     unparsed_page = HTTPARTY.get(url)
-    
     parsed_page = Nokogiri::HTML(unparsed_page)
-    
-    binding.pry
-    
-
   end 
-
 
 
 
@@ -33,10 +23,8 @@ class Scraper
         :availability => attribute.css("p.instock.availability").text.strip
       }
   end 
-  binding.pry
 end 
 end 
-    # Ok so I'm here now in terms of 11/7 on 8:56 pm
 
 
 

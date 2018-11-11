@@ -9,7 +9,7 @@ class ScraperModule::Book
     puts "TEST"
     
     #bare bone adding a ligament 
-    # need to build methods for each thing that I need 
+    # need to build methods for each thing that I need with scrapped site
    # book_1 = self.new 
    # book_1.name = "Great Gatsby"
    # book_1.price = "$16"
@@ -23,6 +23,8 @@ class ScraperModule::Book
     ["book_1", "book_2"]
     
   end 
+  
+  
   
   def name 
     @name
