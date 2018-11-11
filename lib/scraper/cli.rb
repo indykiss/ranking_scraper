@@ -4,18 +4,20 @@ class CLI
   def call 
     fake_question
     get_input
-    fake_response
-
+    bye
   end 
   
   def fake_question
     puts "Welcome to book scraper."
     puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
-    puts "Please input the name of the book you're looking for, and we will provide price and availability."
   end  
   
   def get_input 
-    input = gets.strip.to_i
+    puts "Please input the name of the book you're looking for, and we will provide price and availability."   
+    input = nil 
+    
+    while input != "exit"
+    input = gets.strip.downcase
     
     case input 
       when "Great Gatsby"
@@ -27,8 +29,9 @@ class CLI
     end 
   end 
   
-  def fake_response 
-     puts "The Great Gatsby is available and costs $19."
+
+  def bye 
+    puts "Thanks for coming."
   end 
   
   
