@@ -1,4 +1,7 @@
-class Scraper::Ranking 
+=begin
+
+
+class ScraperModule::Ranking 
   # I take the info from website and formats it for presenting to user with CLI. 
   
   attr_accessor :book_name, :price, :availability

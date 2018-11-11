@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/scraper"
+#require_relative "../lib/scraper"
 
 #RankingScraper::CLI.new.call
 
-puts "hi!"
+puts "Welcome to Book Scraper"
+

@@ -1,5 +1,5 @@
 
-class Scraper::CLI 
+class ScraperModule::CLI 
   
   def call 
     puts "Welcome to book scraper."

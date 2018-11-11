@@ -1,4 +1,9 @@
-class Scraper::Scraper 
+=begin
+
+
+
+
+class ScraperModule::Scraper 
 
   
   def scraper 

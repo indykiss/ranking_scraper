@@ -1,7 +1,7 @@
 require_relative './config/environment.rb'
 
 
-module Scraper
+module ScraperModule
 end
 
   
