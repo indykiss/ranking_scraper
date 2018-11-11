@@ -3,9 +3,24 @@ class Book
   
   def self.all 
     puts "TEST"
+    
+    #bare bone adding a ligament 
+    book_1 = self.new 
+    book_1.name = "Great Gatsby"
+    book_1.price = "$16"
+    book_1.availability = "available"
+    
+    book_2 = self.new 
+    book_2.name = "Inkheart"
+    book_2.price = "$19"
+    book_2.availability = "not available"
+    
+    [book_1, book_2]
+    
   end 
   
-end   
+  
+ 
   
 =begin
   attr_accessor :book_name, :price, :availability
@@ -42,5 +57,6 @@ end
   end 
   
 end 
+=end
 
 
