@@ -4,9 +4,16 @@ class Book
   attr_accessor :name, :price, :availability
   @@all = []
 
-  def scraping_page
-    url = "http://books.toscrape.com/"
-    parsed_page = Nokogiri::HTML(open(url))
+  def initialize(name = nil, price = nil, availability)
+    @name = name 
+    @price = price 
+    @availability = availability
+    @@all << self.name
+  end 
+
+# I fucked up here somewhere.... 
+  def self.scraping_page
+    parsed_page = Nokogiri::HTML(open("http://books.toscrape.com/"))
     binding.pry
   end 
 
