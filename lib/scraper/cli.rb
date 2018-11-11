@@ -9,7 +9,9 @@ class CLI
   
   def fake_question
     puts "Welcome to book scraper."
-    puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
+   # puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
+    # here we want actual list scrapped from site
+     @books = Book.all
     puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."   
   end  
   
@@ -33,11 +35,8 @@ class CLI
     end 
   end 
   
-
   def bye 
     puts "Thanks for coming."
   end 
-  
- 
   
 end 

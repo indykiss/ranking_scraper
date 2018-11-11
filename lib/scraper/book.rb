@@ -1,9 +1,13 @@
-=begin
-
-
-class ScraperModule::Ranking 
+class Book 
   # I take the info from website and formats it for presenting to user with CLI. 
   
+  def self.all 
+    puts "TEST"
+  end 
+  
+end   
+  
+=begin
   attr_accessor :book_name, :price, :availability
   @@all = []
   
@@ -18,7 +22,7 @@ class ScraperModule::Ranking
     @book_name = book_name 
     @price = price 
     @availability = availability
-    @@all << self
+    @@all << self.book_name
   end 
   
   def self.all
