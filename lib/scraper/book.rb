@@ -7,7 +7,6 @@ class ScraperModule::Book
   
   def self.all 
     puts "TEST"
-    
     #bare bone adding a ligament 
     # need to build methods for each thing that I need with scrapped site
    # book_1 = self.new 
@@ -24,6 +23,24 @@ class ScraperModule::Book
     
   end 
   
+  
+  def self.book_tracker 
+    
+    all_books = []
+    
+    all_books << self.parsed_page
+    # just made up scraped_url
+    
+  end 
+  
+  def scraper 
+    url = "http://books.toscrape.com/"
+    unparsed_page = HTTPARTY.get(url)
+    parsed_page = Nokogiri::HTML(unparsed_page)
+    
+    binding.pry
+    
+  end 
   
   
   def name 
