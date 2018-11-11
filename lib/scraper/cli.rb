@@ -18,7 +18,7 @@ class CLI
     input = nil 
     
     while input != "exit"
-      input = gets.strip.downcase
+      input = gets.strip
     
       case input 
         when "Great Gatsby"
