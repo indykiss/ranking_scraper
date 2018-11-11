@@ -20,7 +20,7 @@ class Book
   end 
   
   
- 
+end 
   
 =begin
   attr_accessor :book_name, :price, :availability

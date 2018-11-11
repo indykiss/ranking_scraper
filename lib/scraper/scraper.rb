@@ -2,7 +2,7 @@
 
 
 
-class ScraperModule::Scraper 
+class Scraper 
 
   
   def scraper 
