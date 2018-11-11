@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+require 'nokogiri'
+require 'pry'
+
 require "bundler/setup"
 require_relative '../lib/scraper/scraper'
 require_relative '../lib/scraper/version'
