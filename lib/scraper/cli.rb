@@ -16,7 +16,6 @@ class CLI
   end  
   
   def get_input 
-    
     input = nil 
     
     while input != "exit"

@@ -1,6 +1,14 @@
-class ScraperModule::Book 
+
+
+class Book 
   attr_accessor :name, :price, :availability
   @@all = []
+
+  def scraping_page
+    url = "http://books.toscrape.com/"
+    parsed_page = Nokogiri::HTML(open(url))
+    binding.pry
+  end 
 
 
   # I take the info from website and formats it for presenting to user with CLI. 
@@ -26,19 +34,10 @@ class ScraperModule::Book
   
   def self.book_tracker 
     
-    all_books = []
+    #all_books = []
     
-    all_books << self.parsed_page
+    #all_books << self.parsed_page
     # just made up scraped_url
-    
-  end 
-  
-  def scraper 
-    url = "http://books.toscrape.com/"
-    unparsed_page = HTTPARTY.get(url)
-    parsed_page = Nokogiri::HTML(unparsed_page)
-    
-    binding.pry
     
   end 
   
