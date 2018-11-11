@@ -1,4 +1,4 @@
-class RankingScraper::Scraper 
+class Scraper::Scraper 
 
   
   def scraper 

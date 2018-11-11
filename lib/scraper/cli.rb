@@ -1,5 +1,5 @@
 
-class RankingScraper::CLI 
+class Scraper::CLI 
   
   def call 
     puts "Welcome to book scraper."
