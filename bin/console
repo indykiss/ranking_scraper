@@ -4,7 +4,7 @@ require "bundler/setup"
 require_relative '../lib/scraper/scraper'
 require_relative '../lib/scraper/version'
 require_relative '../lib/scraper/cli'
-require_relative '../lib/scraper/ranking'
+require_relative '../lib/scraper/book'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.

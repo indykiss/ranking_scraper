@@ -7,7 +7,7 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "ranking_scraper"
+  spec.name          = "scraper"
   spec.version       = RankingScraper::VERSION
   spec.authors       = ["'Indira Kissoondyal'"]
   spec.email         = ["'indirak@alumni.princeton.edu'"]
