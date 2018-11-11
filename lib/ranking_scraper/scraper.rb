@@ -7,6 +7,7 @@ class RankingScraper::Scraper
     
     parsed_page = Nokogiri::HTML(unparsed_page)
     
+    binding.pry
     
 
   end 
