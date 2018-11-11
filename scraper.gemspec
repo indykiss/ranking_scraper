@@ -1,4 +1,3 @@
-require_relative "./lib/ranking_scraper/version.rb"
 require 'nokogiri'
 
 
@@ -7,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "ranking_scraper"
-  spec.version       = RankingScraper::VERSION
+  spec.version       = ScraperModule::VERSION
   spec.authors       = ["'Indira Kissoondyal'"]
   spec.email         = ["'indirak@alumni.princeton.edu'"]
 
@@ -43,4 +42,5 @@ Gem::Specification.new do |spec|
   
   spec.add_runtime_dependency "nokogiri"
   spec.add_runtime_dependency "HTTPARTY"
+  
 end
