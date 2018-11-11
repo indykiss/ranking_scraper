@@ -27,6 +27,8 @@ class CLI
            puts "Inkheart is available and costs $22."
         when "Puppies"
            puts "Puppies is not available."
+        else 
+          puts "That's not on our list."
       end 
     end 
   end 
