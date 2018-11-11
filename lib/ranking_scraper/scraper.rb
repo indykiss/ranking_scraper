@@ -1,5 +1,19 @@
-
 class RankingScraper::Scraper 
+
+  
+  def scraper 
+    url = "http://books.toscrape.com/"
+    unparsed_page = HTTPARTY.get(url)
+    
+    parsed_page = Nokogiri::HTML(unparsed_page)
+    
+    
+
+  end 
+
+
+
+
 
   def self.connect_page 
     url = HTTParty.get("http://books.toscrape.com/")

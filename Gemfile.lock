@@ -6,6 +6,12 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
+    mini_portile2 (2.3.0)
+    multi_xml (0.6.0)
+    nokogiri (1.8.5)
+      mini_portile2 (~> 2.3.0)
     rake (10.4.2)
 
 PLATFORMS
@@ -13,8 +19,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
+  httparty
+  nokogiri
   rake (~> 10.0)
   ranking_scraper!
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
