@@ -1,5 +1,6 @@
 require_relative "./lib/ranking_scraper/version.rb"
 require 'nokogiri'
+require 'httparty'
 
 
 lib = File.expand_path("../lib", __FILE__)
@@ -44,6 +45,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "open-uri"
 
     spec.add_runtime_dependency "nokogiri"
-    spec.add_runtime_dependency "HTTPARTY"
+    spec.add_runtime_dependency "httparty"
 
 end
