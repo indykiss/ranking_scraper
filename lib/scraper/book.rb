@@ -12,7 +12,9 @@ class Book
   end 
 
 # I am here
-# ITS WORKING. ITS SCRAPING
+# ITS WORKING. ITS SCRAPING. So we're scraping a random book from the 2nd page of an amazon list 
+# because any other page on amazon has too much code (?) and destroys the IDE's brain 
+# So desperate. Just want this working. Scraping ANYTHING. 
 
   def self.scraping_page
     doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
