@@ -23,12 +23,12 @@ class CLI
     
       # I'm going to hard code this for now for the ~10 books on the page
       case input 
-        when "Great Gatsby"
-          puts "The Great Gatsby is available and costs $19."
-        when "Inkheart"
-           puts "Inkheart is available and costs $22."
-        when "Puppies"
-           puts "Puppies is not available."
+        when "The Only Harmless Great Thing"
+          puts "The Only Harmless Great Thing is available and costs #{book.price}."
+        when "Before Mars (A Planetfall Novel)"
+          puts "Before Mars (A Planetfall Novel) is available and costs #{book.price}."
+        when "The Razor"
+          puts "The Razor is available and costs #{book.price}."
         else 
           puts "That's not on our list."
       end 
