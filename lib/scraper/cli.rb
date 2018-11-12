@@ -1,6 +1,8 @@
 
 class CLI 
   
+  @@all = "The Only Harmless Great Thing, The Razor, and Before Mars (A Planetfall Novel)"
+  
   def call 
     fake_question
     get_input
@@ -11,7 +13,8 @@ class CLI
     puts "Welcome to book scraper."
     # puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
     # here we want actual list scrapped from site
-     @books = Book.all
+    puts "We have " 
+    puts @@all  
     puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."   
   end  
   
