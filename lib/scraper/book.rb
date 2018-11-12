@@ -11,10 +11,11 @@ class Book
     @@all << self.name
   end 
 
-# I fucked up here somewhere.... 
+# I have a problem with open-uri I think 
+
   def self.scraping_page
     parsed_page = Nokogiri::HTML(open("http://books.toscrape.com/"))
-    binding.pry
+    parsed_page
   end 
 
 

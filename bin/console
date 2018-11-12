@@ -2,6 +2,7 @@
 
 require 'nokogiri'
 require 'pry'
+require 'open-uri'
 
 require "bundler/setup"
 require_relative '../lib/scraper/scraper'
