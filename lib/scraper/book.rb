@@ -15,8 +15,9 @@ class Book
 # ITS WORKING. ITS SCRAPING
 
   def self.scraping_page
-    doc = Nokogiri::HTML(open("https://www.amazon.com/best-sellers-books-Amazon/zgbs/books"))
-
+    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_283155_nr_p_n_feature_browse-b_0?fst=as%3Aoff&rh=n%3A283155%2Cp_n_feature_browse-bin%3A2656022011&bbn=283155&ie=UTF8&qid=1542059058&rnid=618072011"))
+    
+    
     binding.pry
   end 
 
