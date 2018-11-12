@@ -15,8 +15,8 @@ class Book
 # ITS WORKING. ITS SCRAPING
 
   def self.scraping_page
-    parsed_page = Nokogiri::HTML(open("http://books.toscrape.com/"))
-    parsed_page
+    doc = Nokogiri::HTML(open("https://www.esquire.com/entertainment/books/g14465218/best-books-of-2018/"))
+    binding.pry
   end 
 
 
