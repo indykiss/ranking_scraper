@@ -15,19 +15,21 @@ class Book
 # ITS WORKING. ITS SCRAPING
 
   def self.scraping_page
-    doc = Nokogiri::HTML(open("https://www.esquire.com/entertainment/books/g14465218/best-books-of-2018/"))
+    doc = Nokogiri::HTML(open("https://www.amazon.com/best-sellers-books-Amazon/zgbs/books"))
+
     binding.pry
   end 
 
 
-  # My CSS Classes!! 
-  # All the names in one long string? title = "span.listicle-slide-hed-text"
-  # All the prices in one long string? prod_price = "span.product-slide-price"
-  # Descriptions? I think separated by slashes. descr = "div.slideshow-slide-dek"
-
-
-  # I take the info from website and formats it for presenting to user with CLI. 
+  # My CSS Classes for the following string, BUT can't get the right info so trying amazon instead.
+  # The given text are long strings which I don't want.
   
+  #  doc = Nokogiri::HTML(open("https://www.esquire.com/entertainment/books/g14465218/best-books-of-2018/"))
+  #  title = doc.search("span.listicle-slide-hed-text").text 
+  #  prod_price = doc.search("span.product-slide-price").text 
+  #  descr = doc.search("div.slideshow-slide-dek").text 
+
+
   def self.all 
     puts "TEST"
     #bare bone adding a ligament 
