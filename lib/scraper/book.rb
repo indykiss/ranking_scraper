@@ -20,6 +20,12 @@ class Book
   end 
 
 
+  # My CSS Classes!! 
+  # All the names in one long string? title = "span.listicle-slide-hed-text"
+  # All the prices in one long string? prod_price = "span.product-slide-price"
+  # Descriptions? I think separated by slashes. descr = "div.slideshow-slide-dek"
+
+
   # I take the info from website and formats it for presenting to user with CLI. 
   
   def self.all 
