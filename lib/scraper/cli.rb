@@ -1,7 +1,7 @@
 
 class CLI 
-  
-  @@all = "The Only Harmless Great Thing, The Razor, and Before Mars (A Planetfall Novel)"
+  attr_accessor :title, :price, :availability
+  @@all = []
   
   def call 
     fake_question
@@ -17,6 +17,7 @@ class CLI
     puts @@all  
     puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."   
   end  
+  
   
   def get_input 
     input = nil 
@@ -41,25 +42,13 @@ class CLI
   def bye 
     puts "Thanks for coming."
   end 
-  
-end 
 
+  def self.all 
+    @@all 
+  end 
 
 
 # delete me later 
-
-
-
-class Book 
-  attr_accessor :name, :price, :availability
-  @@all = []
-
-  def initialize(name = nil, price = nil, availability)
-    @name = name 
-    @price = price 
-    @availability = availability
-    @@all << self.name
-  end 
 
 # So we're scraping a random book from the 2nd page of an amazon list 
 # because any other page on amazon has too much code (?) and destroys the IDE's brain 
@@ -73,6 +62,9 @@ class Book
     book.price = doc.search("#result_16 span.a-offscreen").text
     book.availability = true
     book 
+  
+    @@all << book
+    @@all 
 
   end 
 
@@ -83,11 +75,6 @@ class Book
   #  title = doc.search("span.listicle-slide-hed-text").text 
   #  prod_price = doc.search("span.product-slide-price").text 
   #  descr = doc.search("div.slideshow-slide-dek").text 
-
-
-  def self.all 
-    @@all 
-  end 
   
   def name 
     @name
