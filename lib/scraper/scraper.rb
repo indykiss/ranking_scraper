@@ -1,13 +1,20 @@
-require_relative './config/environment.rb'
 
 
 class ScraperModule::Scraper 
   attr_accessor :title, :price, :availability
-  @@all = []
+
+  
+  def self.scraped_element
+    self.all 
+  end 
+  
   
   def self.all 
-    @@all << self.scraping_page
-    @@all 
+    books = []
+    
+    books << self.scraping_page
+    
+    books 
   end 
 
   def self.scraping_page

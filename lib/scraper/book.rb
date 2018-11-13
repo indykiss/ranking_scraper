@@ -1,4 +1,3 @@
-#require_relative './config/environment.rb'
 
 # forgot what this is supposed to do 
 

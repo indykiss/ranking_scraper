@@ -1,9 +1,5 @@
-require_relative './config/environment.rb'
-
 
 class ScraperModule::CLI 
-  attr_accessor :title, :price, :availability
-  @@all = []
   
   def call 
     fake_question
@@ -15,8 +11,12 @@ class ScraperModule::CLI
     puts "Welcome to book scraper."
     # puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
     # here we want actual list scrapped from site
-    puts "We have " 
-    puts @@all  
+    puts "We have... " 
+    @books = ScraperModule::Scraper.scraped_element
+    
+    @books.each do |book|
+      puts "#{book} - #{book.price} - is available."
+    
     puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."   
   end  
   

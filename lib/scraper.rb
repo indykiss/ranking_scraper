@@ -1,5 +1,3 @@
-require_relative './config/environment.rb'
-
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
