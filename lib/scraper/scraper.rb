@@ -1,6 +1,6 @@
 
 
-class ScraperModule::Scraper 
+class Scraper 
   attr_accessor :title, :price, :availability
 
   

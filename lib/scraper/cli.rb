@@ -1,5 +1,5 @@
 
-class ScraperModule::CLI 
+class CLI 
   
   def call 
     question
@@ -12,7 +12,7 @@ class ScraperModule::CLI
     # puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
     # here we want actual list scrapped from site
     puts "We have... " 
-    @books = ScraperModule::Scraper.scraped_element
+    @books = Scraper.scraped_element
     
     @books.each do |book|
       puts "#{book.title} - #{book.price} - is available."
@@ -29,13 +29,16 @@ class ScraperModule::CLI
 
         if input == "The Only Harmless Great Thing"
           puts "The Only Harmless Great Thing is available and costs #{book.price}."
-        when "Before Mars (A Planetfall Novel)"
+        else if input == "Before Mars (A Planetfall Novel)"
           puts "Before Mars (A Planetfall Novel) is available and costs #{book.price}."
-        when "The Razor"
+        else if input == "The Razor"
           puts "The Razor is available and costs #{book.price}."
         else 
           puts "That's not on our list."
-      end 
+        end 
+        end 
+        end 
+        end 
     end 
   end 
   

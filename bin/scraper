@@ -8,7 +8,7 @@ require_relative "../lib/scraper/scraper"
 require_relative '../config/environment'
 
 
-ScraperModule::CLI.new.call
+CLI.new.call
 
 
 
