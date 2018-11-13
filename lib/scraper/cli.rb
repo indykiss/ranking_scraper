@@ -24,10 +24,10 @@ class CLI
       all_books = {
       :title => book.css("h2").text, 
       :price => book.css("span.a-offscreen").text}
-      
-      
-    
-# ok so I work but lets try something else     
+    all_books 
+  end 
+  
+# ok so this works but lets try something else, above      
 #    book = self.new 
 #    book.title = doc.search("#result_16 h2").text
 #    book.price = doc.search("#result_16 span.a-offscreen").text
