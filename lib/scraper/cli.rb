@@ -13,8 +13,8 @@ class CLI
     puts "We have... " 
     # need list of all the books 
     @@all 
-    @@all.each do |book|
-      puts "#{book.title} - #{book.price} - is available."
+    #@@all.each do |book|
+    #  puts "#{book.title} - #{book.price} - is available."
   end  
   
   def self.scraping_page
@@ -24,7 +24,7 @@ class CLI
       all_books = {
       :title => book.css("h2").text, 
       :price => book.css("span.a-offscreen").text}
-    all_books 
+    @@all << all_books 
   end 
   
 # ok so this works but lets try something else, above      
@@ -45,7 +45,7 @@ class CLI
     input = nil 
     
     while input != "exit"
-      puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."  
+      puts "Please input the name of the book you're looking for, and we will provide price. Or press exit."  
     
       input = gets.strip
 
@@ -89,7 +89,7 @@ class CLI
     @availability
   end 
   
-end 
+
 
 
   
