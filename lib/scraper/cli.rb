@@ -1,5 +1,7 @@
+require_relative './config/environment.rb'
 
-class CLI 
+
+class ScraperModule::CLI 
   attr_accessor :title, :price, :availability
   @@all = []
   
@@ -43,6 +45,20 @@ class CLI
     puts "Thanks for coming."
   end 
 
+    def self.all 
+    @@all << self.scraping_page
+    @@all 
+  end 
+
+  def self.scraping_page
+    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
+    
+    book = self.new 
+    book.title = doc.search("#result_16 h2").text
+    book.price = doc.search("#result_16 span.a-offscreen").text
+    book.availability = true
+    book 
+  end 
 
 
   #  My CSS Classes for the following string, BUT can't get the right info so trying amazon instead.

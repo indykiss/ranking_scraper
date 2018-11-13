@@ -1,5 +1,7 @@
+require_relative './config/environment.rb'
 
-class Scraper 
+
+class ScraperModule::Scraper 
   attr_accessor :title, :price, :availability
   @@all = []
   
@@ -19,6 +21,8 @@ class Scraper
   end 
 
 end 
+
+
 
 # here i'm at 47 mins into 1st video with avi. might be good to simplify with that youtube video
 
