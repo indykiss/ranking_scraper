@@ -26,15 +26,13 @@ class ScraperModule::CLI
       puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."  
     
       input = gets.strip
-    
-      # I'm going to hard code this for now for the ~10 books on the page
-      case input 
-        when "The Only Harmless Great Thing"
-          puts "The Only Harmless Great Thing is available and costs $8."
+
+        if input == "The Only Harmless Great Thing"
+          puts "The Only Harmless Great Thing is available and costs #{book.price}."
         when "Before Mars (A Planetfall Novel)"
-          puts "Before Mars (A Planetfall Novel) is available and costs $10."
+          puts "Before Mars (A Planetfall Novel) is available and costs #{book.price}."
         when "The Razor"
-          puts "The Razor is available and costs $12."
+          puts "The Razor is available and costs #{book.price}."
         else 
           puts "That's not on our list."
       end 
