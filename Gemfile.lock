@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     ranking_scraper (0.1.0)
+      httparty
       nokogiri
 
 GEM

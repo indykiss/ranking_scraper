@@ -9,10 +9,9 @@ class CLI
   
   def question 
     puts "Welcome to book scraper."
-    # puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
-    # here we want actual list scrapped from site
     puts "We have... " 
-    @books = Scraper.scraped_element
+    # need list of all the books 
+    @books = Scraper.scraping_page
     
     @books.each do |book|
       puts "#{book.title} - #{book.price} - is available."

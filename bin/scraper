@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/scraper/cli"
-require_relative "../lib/scraper/version"
-require_relative "../lib/scraper/book"
-require_relative "../lib/scraper/scraper"
-
-require_relative '../config/environment'
+require_relative "../config/environment"
+require "bundler/setup"
+require "scraper"
+require 'open-uri'
 
 
 CLI.new.call
