@@ -20,11 +20,19 @@ class CLI
   def self.scraping_page
     doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
     
-    book = self.new 
-    book.title = doc.search("#result_16 h2").text
-    book.price = doc.search("#result_16 span.a-offscreen").text
-    book.availability = true
-    book 
+    doc.css("div.s-item-container").collect do |book| 
+      all_books = {
+      :title => book.css("h2").text, 
+      :price => book.css("span.a-offscreen").text}
+      
+      
+    
+# ok so I work but lets try something else     
+#    book = self.new 
+#    book.title = doc.search("#result_16 h2").text
+#    book.price = doc.search("#result_16 span.a-offscreen").text
+#    book.availability = true
+#    book 
   end 
   
   def self.all 
