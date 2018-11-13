@@ -1,5 +1,6 @@
 
 class CLI 
+  @@all = [] 
   
   def call 
     question
@@ -11,12 +12,25 @@ class CLI
     puts "Welcome to book scraper."
     puts "We have... " 
     # need list of all the books 
-    # there's a problem here 
-    @books = self.scraping_page
-    
-    @books.each do |book|
+    @@all 
+    @@all.each do |book|
       puts "#{book.title} - #{book.price} - is available."
   end  
+  
+  def self.scraping_page
+    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
+    
+    book = self.new 
+    book.title = doc.search("#result_16 h2").text
+    book.price = doc.search("#result_16 span.a-offscreen").text
+    book.availability = true
+    book 
+  end 
+  
+  def self.all 
+    @@all << self.scraping_page
+    @@all 
+  end 
   
   
   def answer  
@@ -46,20 +60,6 @@ class CLI
     puts "Thanks for coming."
   end 
 
-    def self.all 
-    @@all << self.scraping_page
-    @@all 
-  end 
-
-  def self.scraping_page
-    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
-    
-    book = self.new 
-    book.title = doc.search("#result_16 h2").text
-    book.price = doc.search("#result_16 span.a-offscreen").text
-    book.availability = true
-    book 
-  end 
 
 
   #  My CSS Classes for the following string, BUT can't get the right info so trying amazon instead.
