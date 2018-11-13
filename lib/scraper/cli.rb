@@ -11,7 +11,8 @@ class CLI
     puts "Welcome to book scraper."
     puts "We have... " 
     # need list of all the books 
-    @books = Scraper.scraping_page
+    # there's a problem here 
+    @books = self.scraping_page
     
     @books.each do |book|
       puts "#{book.title} - #{book.price} - is available."
