@@ -1,16 +1,23 @@
 
 class Scraper 
+  attr_accessor :title, :price, :availability
+  @@all = []
   
-  
-  #this will do in new class later but not working right now
-#  def scraping_page
-#    url = "http://books.toscrape.com/"
-#    parsed_page = Nokogiri::HTML(open(url))
-#    binding.pry
-#  end 
-  
+  def self.all 
+    @@all << self.scraping_page
+    @@all 
+  end 
 
-  
+  def self.scraping_page
+    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
+    
+    book = self.new 
+    book.title = doc.search("#result_16 h2").text
+    book.price = doc.search("#result_16 span.a-offscreen").text
+    book.availability = true
+    book 
+  end 
+
 end 
 
 # here i'm at 47 mins into 1st video with avi. might be good to simplify with that youtube video
