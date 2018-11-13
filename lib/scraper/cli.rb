@@ -2,12 +2,12 @@
 class ScraperModule::CLI 
   
   def call 
-    fake_question
-    get_input
+    question
+    answer 
     bye
   end 
   
-  def fake_question
+  def question 
     puts "Welcome to book scraper."
     # puts "Here are the available books: Great Gatsby, Inkheart, Puppies"
     # here we want actual list scrapped from site
@@ -15,16 +15,16 @@ class ScraperModule::CLI
     @books = ScraperModule::Scraper.scraped_element
     
     @books.each do |book|
-      puts "#{book} - #{book.price} - is available."
-    
-    puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."   
+      puts "#{book.title} - #{book.price} - is available."
   end  
   
   
-  def get_input 
+  def answer  
     input = nil 
     
     while input != "exit"
+      puts "Please input the name of the book you're looking for, and we will provide price and availability. Or press exit if you'd like to exit."  
+    
       input = gets.strip
     
       # I'm going to hard code this for now for the ~10 books on the page
