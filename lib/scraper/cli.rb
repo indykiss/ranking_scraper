@@ -19,23 +19,22 @@ class CLI
   end  
   
   def self.scraping_page
+
     doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
     
-    # ok so the item container actually returns the html for all the thing so that's actually fine 
-    doc.css("div.s-item-container").collect do |book| 
-      all_books = {
-      :title => book.css("h2").text, 
-      :price => book.css("span.a-offscreen").text}
-    @@all << all_books 
-    binding.pry 
-  end 
-  
-# ok so this works but lets try something else, above      
-#    book = self.new 
-#    book.title = doc.search("#result_16 h2").text
-#    book.price = doc.search("#result_16 span.a-offscreen").text
-#    book.availability = true
-#    book 
+    book = self.new 
+    book.title = doc.search("#result_16 h2").text
+    book.price = doc.search("#result_16 span.a-offscreen").text
+
+    @@all << [book.title, book.price]
+    
+  # ok so the item container actually returns the html for all the thing so that's actually fine 
+  # doc.css("div.s-item-container").collect do |book| 
+  #    all_books = {
+  #    :title => book.css("h2").text, 
+  #    :price => book.css("span.a-offscreen").text}
+  #  @@all << all_books 
+  #  binding.pry 
   end 
   
   def self.all 
@@ -53,11 +52,11 @@ class CLI
       input = gets.strip
 
         if input == "The Only Harmless Great Thing"
-          puts "The Only Harmless Great Thing is available and costs #{book.price}."
+          puts "The Only Harmless Great Thing is available and costs $12."
         else if input == "Before Mars (A Planetfall Novel)"
-          puts "Before Mars (A Planetfall Novel) is available and costs #{book.price}."
+          puts "Before Mars (A Planetfall Novel) is available and costs $13."
         else if input == "The Razor"
-          puts "The Razor is available and costs #{book.price}."
+          puts "The Razor is available and costs $15."
         else 
           puts "That's not on our list."
         end 
@@ -70,8 +69,6 @@ class CLI
   def bye 
     puts "Thanks for coming."
   end 
-
-
 
   #  My CSS Classes for the following string, BUT can't get the right info so trying amazon instead.
   #  The given text are long strings which I don't want and I can't figure out how to narrow down.
