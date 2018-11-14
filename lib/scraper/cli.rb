@@ -7,7 +7,6 @@ class CLI
   def call 
     question
     answer 
-    titles 
     bye
   end 
   
@@ -16,15 +15,12 @@ class CLI
      @@titles.each do |book_title|
       puts book_title
     end 
-    #overkill, just want something to work 
-    @@titles
-    binding.pry 
   end 
   
   def question 
     puts "Welcome to book scraper."
     puts "We have..." 
-    puts @@titles
+    scraping_page 
   end  
   
   def self.scraping_page
@@ -54,6 +50,8 @@ class CLI
     @@all << [book_title3, book_price3] 
     
     @@titles << [book_title1, book_title2, book_title3]
+
+    @@all 
 
   # ok so the item container actually returns the html for all the thing so that's actually fine 
   # doc.css("div.s-item-container").collect do |book| 
