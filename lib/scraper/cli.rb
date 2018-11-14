@@ -61,7 +61,6 @@ class CLI
   #  @@all << all_books 
   #  binding.pry 
   end 
-  
 
   
   def answer  
