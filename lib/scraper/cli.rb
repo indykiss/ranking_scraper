@@ -26,7 +26,10 @@ class CLI
     book.title = doc.search("#result_16 h2").text
     book.price = doc.search("#result_16 span.a-offscreen").text
 
+
     @@all << [book.title, book.price]
+
+    binding.pry 
     
   # ok so the item container actually returns the html for all the thing so that's actually fine 
   # doc.css("div.s-item-container").collect do |book| 
@@ -35,11 +38,6 @@ class CLI
   #    :price => book.css("span.a-offscreen").text}
   #  @@all << all_books 
   #  binding.pry 
-  end 
-  
-  def self.all 
-    @@all << self.scraping_page
-    @@all 
   end 
   
   
@@ -51,7 +49,7 @@ class CLI
     
       input = gets.strip
 
-        if input == "The Only Harmless Great Thing"
+        if input == 
           puts "The Only Harmless Great Thing is available and costs $12."
         else if input == "Before Mars (A Planetfall Novel)"
           puts "Before Mars (A Planetfall Novel) is available and costs $13."
@@ -76,6 +74,12 @@ class CLI
   #  title = doc.search("span.listicle-slide-hed-text").text 
   #  prod_price = doc.search("span.product-slide-price").text 
   #  descr = doc.search("div.slideshow-slide-dek").text 
+  
+    
+  def self.all 
+    @@all << self.scraping_page
+    @@all 
+  end 
   
   def name 
     @name
