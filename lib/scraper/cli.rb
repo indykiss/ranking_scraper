@@ -49,18 +49,19 @@ class CLI
     
       input = gets.strip
 
-        if input == 
-          puts "The Only Harmless Great Thing is available and costs $12."
-        else if input == "Before Mars (A Planetfall Novel)"
-          puts "Before Mars (A Planetfall Novel) is available and costs $13."
-        else if input == "The Razor"
-          puts "The Razor is available and costs $15."
+        if "The Only Harmless Great Thing"
+          "The Only Harmless Great Thing is available and costs $12."
+        else if "Before Mars (A Planetfall Novel)"
+          "Before Mars (A Planetfall Novel) is available and costs $13."
+        else if "The Razor"
+          "The Razor is available and costs $15."
         else 
           puts "That's not on our list."
+        end   
         end 
         end 
         end 
-        end 
+        
     end 
   end 
   
