@@ -1,5 +1,6 @@
 
 class CLI 
+  attr_accessor :title, :price 
   @@all = [] 
   
   def call 
@@ -27,7 +28,7 @@ class CLI
     book.price = doc.search("#result_16 span.a-offscreen").text
 
 
-    @@all << [book.title, book.price]
+    @@all << book.title, book.price
 
     binding.pry 
     
@@ -82,8 +83,8 @@ class CLI
     @@all 
   end 
   
-  def name 
-    @name
+  def title 
+    @title 
   end 
   
   def price
