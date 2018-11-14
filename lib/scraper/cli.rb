@@ -7,6 +7,7 @@ class CLI
   def call 
     question
     answer 
+    titles 
     bye
   end 
   
@@ -20,7 +21,6 @@ class CLI
   def question 
     puts "Welcome to book scraper."
     puts "We have..." 
-    scraping_page 
   end  
   
   def self.scraping_page
@@ -68,7 +68,7 @@ class CLI
     input = nil 
     
     while input != "exit"
-      puts "Please input the name of the book you're looking for, and we will provide price. Or press exit."  
+      puts "Please input the name of the book you want and we will provide price. Or press exit."  
     
       input = gets.strip
 
