@@ -6,7 +6,6 @@ class Scraper
     self.all 
   end 
   
-  
   def self.all 
     books = []
     books << self.scraping_page
@@ -27,9 +26,6 @@ class Scraper
 
 end 
 
-
-
-# here i'm at 47 mins into 1st video with avi. might be good to simplify with that youtube video
 
   #def self.connect_page 
   #  url = HTTParty.get("http://books.toscrape.com/")

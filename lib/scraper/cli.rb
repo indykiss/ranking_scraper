@@ -28,7 +28,8 @@ class CLI
     book.price = doc.search("#result_16 span.a-offscreen").text
 
 
-    @@all << book.title, book.price
+    @@all << book.title 
+    @@all << book.price
 
     binding.pry 
     
