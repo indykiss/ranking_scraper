@@ -17,11 +17,13 @@ class ScraperModule::CLI
   end 
   
   # just trying to output actual titles as list for very beginning 
-  def titles 
+  def self.titles 
      @@titles.each do |book_title|
       puts book_title
+    binding.pry 
+
     end 
-    #@@titles 
+    @@titles 
   end 
   
   def question 
@@ -57,9 +59,9 @@ class ScraperModule::CLI
     @@titles << [book_title1, book_title2, book_title3]
 
     @@all 
-  end 
-
   
+  end   
+
   def answer  
     input = nil 
     
@@ -68,12 +70,12 @@ class ScraperModule::CLI
     
       input = gets.strip
 
-        if input == "The Only Harmless Great Thing"
-          "The Only Harmless Great Thing is available and costs $12."
-        else if input == "Before Mars (A Planetfall Novel)"
-          "Before Mars (A Planetfall Novel) is available and costs $13."
-        else if input == "The Razor"
-          "The Razor is available and costs $15."
+        if input == book_title1
+          "#{book_title1} is available and costs #{book_price1}."
+        else if input == book_title2
+          "#{book_title2} is available and costs #{book_price2}."
+        else if input == book_title3
+          "#{book_title3} is available and costs #{book_price3}."
         else 
           puts "That's not on our list."
         end   
