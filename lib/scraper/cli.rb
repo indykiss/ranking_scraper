@@ -12,7 +12,8 @@ class CLI
     puts "Welcome to book scraper."
     puts "We have... " 
     # need list of all the books 
-    @@all 
+    
+    @@all  
     #@@all.each do |book|
     #  puts "#{book.title} - #{book.price} - is available."
   end  
@@ -20,11 +21,13 @@ class CLI
   def self.scraping_page
     doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
     
+    # ok so the item container actually returns the html for all the thing so that's actually fine 
     doc.css("div.s-item-container").collect do |book| 
       all_books = {
       :title => book.css("h2").text, 
       :price => book.css("span.a-offscreen").text}
     @@all << all_books 
+    binding.pry 
   end 
   
 # ok so this works but lets try something else, above      
