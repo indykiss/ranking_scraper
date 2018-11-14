@@ -7,7 +7,18 @@ class CLI
   def call 
     question
     answer 
+    titles 
     bye
+  end 
+  
+  # just trying to output actual titles as list for very beginning 
+  def titles 
+     @@titles.each do |book_title|
+      puts book_title
+    end 
+    #overkill, just want something to work 
+    @@titles
+    binding.pry 
   end 
   
   def question 
