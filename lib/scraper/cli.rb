@@ -13,10 +13,9 @@ class CLI
     puts "Welcome to book scraper."
     puts "We have... " 
     # need list of all the books 
-    
     @@all  
     #@@all.each do |book|
-    #  puts "#{book.title} - #{book.price} - is available."
+    #puts "#{book.title} - #{book.price} - is available."
   end  
   
   def self.scraping_page
@@ -51,11 +50,11 @@ class CLI
     
       input = gets.strip
 
-        if "The Only Harmless Great Thing"
+        if input == "The Only Harmless Great Thing"
           "The Only Harmless Great Thing is available and costs $12."
-        else if "Before Mars (A Planetfall Novel)"
+        else if input == "Before Mars (A Planetfall Novel)"
           "Before Mars (A Planetfall Novel) is available and costs $13."
-        else if "The Razor"
+        else if input == "The Razor"
           "The Razor is available and costs $15."
         else 
           puts "That's not on our list."
@@ -63,9 +62,9 @@ class CLI
         end 
         end 
         end 
-        
     end 
   end 
+  
   
   def bye 
     puts "Thanks for coming."
