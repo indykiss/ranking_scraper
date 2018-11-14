@@ -2,7 +2,7 @@
 class CLI 
   attr_accessor :title, :price 
   @@all = []
-  @@book_names = []
+  @@titles = []
   
   def call 
     question
@@ -12,15 +12,11 @@ class CLI
   
   def question 
     puts "Welcome to book scraper."
-    puts "We have... " 
-    # need list of all the books 
-    @@book_names
-    #@@all.each do |book|
-    #puts "#{book.title} - #{book.price} - is available."
+    puts "We have..." 
+    puts @@titles
   end  
   
   def self.scraping_page
-
     url = HTTParty.get("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581")
     doc = Nokogiri::HTML(url)
 
@@ -46,7 +42,7 @@ class CLI
 
     @@all << [book_title3, book_price3] 
     
-    @@book_names << [book_title1, book_title2, book_title3]
+    @@titles << [book_title1, book_title2, book_title3]
 
   # ok so the item container actually returns the html for all the thing so that's actually fine 
   # doc.css("div.s-item-container").collect do |book| 
