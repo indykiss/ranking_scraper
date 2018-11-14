@@ -1,5 +1,5 @@
-class Scraper 
-  attr_accessor :title, :price, :availability
+class ScraperModule::Scraper 
+  attr_accessor :title, :price
   
   def self.scraped_element
     self.all 

@@ -1,5 +1,5 @@
 
-class CLI 
+class ScraperModule::CLI 
   attr_accessor :title, :price 
   @@all = []
   @@titles = []
@@ -16,11 +16,12 @@ class CLI
      @@titles.each do |book_title|
       puts book_title
     end 
+    #@@titles 
   end 
   
   def question 
     puts "Welcome to book scraper."
-    puts "We have..." 
+    puts "We have..."
   end  
   
   def self.scraping_page
