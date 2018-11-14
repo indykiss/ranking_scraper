@@ -1,7 +1,8 @@
 
 class CLI 
   attr_accessor :title, :price 
-  @@all = [] 
+  @@all = []
+  @@book_names = []
   
   def call 
     question
@@ -13,25 +14,40 @@ class CLI
     puts "Welcome to book scraper."
     puts "We have... " 
     # need list of all the books 
-    @@all  
+    @@book_names
     #@@all.each do |book|
     #puts "#{book.title} - #{book.price} - is available."
   end  
   
   def self.scraping_page
 
-    doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
+    url = HTTParty.get("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581")
+    doc = Nokogiri::HTML(url)
+
+# Keep getting an open uri error so doing HTTparty instead 
+# doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581"))
+# The below code is actually working now 
     
-    book = self.new 
-    book.title = doc.search("#result_16 h2").text
-    book.price = doc.search("#result_16 span.a-offscreen").text
+    book1 = self.new 
+    book_title1 = doc.search("#result_16 h2").text
+    book_price1 = doc.search("#result_16 span.a-offscreen").text
 
-
-    @@all << book.title 
-    @@all << book.price
-
-    binding.pry 
+    @@all << [book_title1, book_price1] 
     
+    book2 = self.new 
+    book_title2 = doc.search("#result_17 h2").text
+    book_price2 = doc.search("#result_17 span.a-offscreen").text
+
+    @@all << [book_title2, book_price2] 
+    
+    book3 = self.new 
+    book_title3 = doc.search("#result_18 h2").text
+    book_price3 = doc.search("#result_18 span.a-offscreen").text
+
+    @@all << [book_title3, book_price3] 
+    
+    @@book_names << [book_title1, book_title2, book_title3]
+
   # ok so the item container actually returns the html for all the thing so that's actually fine 
   # doc.css("div.s-item-container").collect do |book| 
   #    all_books = {
@@ -41,6 +57,7 @@ class CLI
   #  binding.pry 
   end 
   
+
   
   def answer  
     input = nil 

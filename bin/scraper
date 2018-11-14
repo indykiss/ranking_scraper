@@ -3,7 +3,8 @@
 require_relative "../config/environment"
 require "bundler/setup"
 require "scraper"
-require 'open-uri'
+require "open-uri"
+require "httparty"
 
 
 CLI.new.call
