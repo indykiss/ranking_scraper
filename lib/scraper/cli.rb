@@ -67,11 +67,13 @@ class ScraperModule::CLI
       input = gets.strip
 
         if input == @@titles[0]
-          "#{@@titles[0]} is available and costs #{@@prices[0]}."
+          puts "#{@@titles[0]} is available and costs #{@@prices[0]}."
         else if input == @@titles[1]
-          "#{@@titles[1]} is available and costs #{@@prices[1]}."
+          puts "#{@@titles[1]} is available and costs #{@@prices[1]}."
         else if input == @@titles[2]
-          "#{@@titles[2]} is available and costs #{@@prices[2]}."
+          puts "#{@@titles[2]} is available and costs #{@@prices[2]}."
+          
+          binding.pry 
         else 
           puts "That's not on our list."
         end   
