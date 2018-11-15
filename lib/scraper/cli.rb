@@ -3,6 +3,7 @@ class ScraperModule::CLI
   attr_accessor :title, :price 
   @@all = []
   @@titles = []
+  @@prices = []
   
   def initialize
     @title = title 
@@ -47,6 +48,12 @@ class ScraperModule::CLI
     @@titles << book_title2 
     @@titles << book_title3
     @@titles 
+    
+    @@prices << book_price1
+    @@prices << book_price2
+    @@prices << book_price3
+    @@prices 
+    
 
   end   
 
@@ -59,12 +66,12 @@ class ScraperModule::CLI
     
       input = gets.strip
 
-        if input == book_title1
-          "#{book_title1} is available and costs #{book_price1}."
-        else if input == book_title2
-          "#{book_title2} is available and costs #{book_price2}."
-        else if input == book_title3
-          "#{book_title3} is available and costs #{book_price3}."
+        if input == @@titles[0]
+          "#{@@titles[0]} is available and costs #{@@prices[0]}."
+        else if input == @@titles[1]
+          "#{@@titles[1]} is available and costs #{@@prices[1]}."
+        else if input == @@titles[2]
+          "#{@@titles[2]} is available and costs #{@@prices[2]}."
         else 
           puts "That's not on our list."
         end   
