@@ -28,7 +28,7 @@ class ScraperModule::CLI
   end 
 
   
-  def scraping_page
+  def self.scraping_page
     url = HTTParty.get("https://play.google.com/store/books/collection/promotion_10028dc_books_topsellers_bestof2017?clp=sgI7CjMKLXByb21vdGlvbl8xMDAyOGRjX2Jvb2tzX3RvcHNlbGxlcnNfYmVzdG9mMjAxNxAHGAEiBAgFCCw%3D%3AS%3AANO1ljJQ0SY&hl=en")
     doc = Nokogiri::HTML(url)
     
@@ -54,7 +54,7 @@ class ScraperModule::CLI
     @@prices << book_price3
     @@prices 
     
-
+    binding.pry 
   end   
 
 
