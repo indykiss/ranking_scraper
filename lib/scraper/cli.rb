@@ -45,11 +45,15 @@ class ScraperModule::CLI
 
     #@@all << [book_title1, book_price1] 
     
-    book2 = self.new 
-    book_title2 = doc.search("#span.full-title").text
-    #book_price2 = doc.search("#result_2 span.a-offscreen").text
+# make loop here 
 
-    @@all << [book_title2] 
+    
+    book1 = self.new 
+    
+    book_title1 = doc.search("span.full-title")[0].text
+    book_price1 = doc.search("span.display-price")[0].text
+
+    @@all << book_title1, book_price1
     
    # book3 = self.new 
   #  book_title3 = doc.search("#result_3 h2").text
@@ -57,7 +61,7 @@ class ScraperModule::CLI
 
    # @@all << [book_title3, book_price3] 
     
-    @@titles << [book_title2]
+    @@titles << [book_title1]
     binding.pry 
 
     @@all 
