@@ -11,19 +11,9 @@ class ScraperModule::CLI
   
   def call 
     question
-    answer 
+    scraping_page
     titles 
     bye
-  end 
-  
-  # just trying to output actual titles as list for very beginning 
-  def self.titles 
-     @@titles.each do |book_title|
-      puts book_title
-    binding.pry 
-
-    end 
-    @@titles 
   end 
   
   def question 
@@ -31,7 +21,16 @@ class ScraperModule::CLI
     puts "We have..."
   end  
   
-  def self.scraping_page
+  def titles 
+    # @@titles.each do |book_title|
+    #  puts book_title
+  #  binding.pry 
+ 
+    puts @@titles
+  end 
+
+  
+  def scraping_page
     url = HTTParty.get("https://play.google.com/store/books/collection/promotion_10028dc_books_topsellers_bestof2017?clp=sgI7CjMKLXByb21vdGlvbl8xMDAyOGRjX2Jvb2tzX3RvcHNlbGxlcnNfYmVzdG9mMjAxNxAHGAEiBAgFCCw%3D%3AS%3AANO1ljJQ0SY&hl=en")
     doc = Nokogiri::HTML(url)
 
@@ -48,12 +47,12 @@ class ScraperModule::CLI
 # make loop here 
 
     
-    book1 = self.new 
+    #book1 = self.new 
     
     book_title1 = doc.search("span.full-title")[0].text
     book_price1 = doc.search("span.display-price")[0].text
 
-    @@all << book_title1, book_price1
+    #@@all << book_title1, book_price1
     
    # book3 = self.new 
   #  book_title3 = doc.search("#result_3 h2").text
@@ -61,12 +60,11 @@ class ScraperModule::CLI
 
    # @@all << [book_title3, book_price3] 
     
-    @@titles << [book_title1]
-    binding.pry 
-
-    @@all 
+    @@titles << book_title1
+    #@@all 
   
   end   
+
 
   def answer  
     input = nil 
