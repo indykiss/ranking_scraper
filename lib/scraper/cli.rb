@@ -32,31 +32,33 @@ class ScraperModule::CLI
   end  
   
   def self.scraping_page
-    url = HTTParty.get("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581")
+    url = HTTParty.get("https://play.google.com/store/books/collection/promotion_10028dc_books_topsellers_bestof2017?clp=sgI7CjMKLXByb21vdGlvbl8xMDAyOGRjX2Jvb2tzX3RvcHNlbGxlcnNfYmVzdG9mMjAxNxAHGAEiBAgFCCw%3D%3AS%3AANO1ljJQ0SY&hl=en")
     doc = Nokogiri::HTML(url)
 
 # Keep getting an open uri error so doing HTTparty instead. Below code is working ok.
 # doc = Nokogiri::HTML(open("https://www.amazon.com/s/ref=lp_17296237011_pg_2?srs=17296237011&rh=i%3Aspecialty-aps&page=2&ie=UTF8&qid=1542059581")) 
-    
-    book1 = self.new 
-    book_title1 = doc.search("#result_16 h2").text
-    book_price1 = doc.search("#result_16 span.a-offscreen").text
+   
+   #example of what worked before amazon decided to be mean to me  
+   # book1 = self.new 
+  #  book_title1 = doc.search("#result_1 h2").text
+  #  book_price1 = doc.search("#result_1 span.a-offscreen").text
 
-    @@all << [book_title1, book_price1] 
+    #@@all << [book_title1, book_price1] 
     
     book2 = self.new 
-    book_title2 = doc.search("#result_17 h2").text
-    book_price2 = doc.search("#result_17 span.a-offscreen").text
+    book_title2 = doc.search("#result_2 h2").text
+    book_price2 = doc.search("#result_2 span.a-offscreen").text
 
     @@all << [book_title2, book_price2] 
     
     book3 = self.new 
-    book_title3 = doc.search("#result_18 h2").text
-    book_price3 = doc.search("#result_18 span.a-offscreen").text
+    book_title3 = doc.search("#result_3 h2").text
+    book_price3 = doc.search("#result_3 span.a-offscreen").text
 
     @@all << [book_title3, book_price3] 
     
     @@titles << [book_title1, book_title2, book_title3]
+    binding.pry 
 
     @@all 
   
