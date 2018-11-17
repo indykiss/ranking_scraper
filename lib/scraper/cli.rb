@@ -35,30 +35,22 @@ class ScraperModule::CLI
     
     # this isn't working 
     
-    doc.css("div.col-sm-7").collect do |book|
+    book1 = self.new
+    index1 = doc.search("h4")[11].text
+    title1 = doc.search("h4")[0].text
+    descr1 = doc.search("div.media-body")[0].text
+    book1 = [index1, title1, descr1]
     
-    book_attributes = {
-      :title => book.css("h4").text.strip,
-      :desc => book.css("div.media-body").text.strip,
-      
-    }
-    
-    
-    book_attributes
+    book2 = self.new
+    index2 = doc.search("h4")[11].text
+    title2 = doc.search("h4")[0].text
+    descr2 = doc.search("div.media-body")[0].text
+    book2 = [index2, title2, descr2]
+
     binding.pry 
     
   end 
     
-    #doc.search("h4")[0].text
-    #descr = doc.search("div.media-body")[0].text
-    
-# make loop here 
-    
-  
-    
-    
-    binding.pry 
-  end   
 
 
   def answer  
