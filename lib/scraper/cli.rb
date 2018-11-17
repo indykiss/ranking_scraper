@@ -33,8 +33,24 @@ class ScraperModule::CLI
     doc = Nokogiri::HTML(url)
     
     
-    index = doc.search("h4")[0].text
-    descr = doc.search("div.media-body")[0].text
+    # this isn't working 
+    
+    doc.css("div.col-sm-7").collect do |book|
+    
+    book_attributes = {
+      :title => book.css("h4").text.strip,
+      :desc => book.css("div.media-body").text.strip,
+      
+    }
+    
+    
+    book_attributes
+    binding.pry 
+    
+  end 
+    
+    #doc.search("h4")[0].text
+    #descr = doc.search("div.media-body")[0].text
     
 # make loop here 
     
