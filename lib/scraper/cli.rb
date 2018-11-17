@@ -29,30 +29,17 @@ class ScraperModule::CLI
 
   
   def self.scraping_page
-    url = HTTParty.get("https://play.google.com/store/books/collection/promotion_10028dc_books_topsellers_bestof2017?clp=sgI7CjMKLXByb21vdGlvbl8xMDAyOGRjX2Jvb2tzX3RvcHNlbGxlcnNfYmVzdG9mMjAxNxAHGAEiBAgFCCw%3D%3AS%3AANO1ljJQ0SY&hl=en")
+    url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
+    
+    
+    index = doc.search("h4")[0].text
+    descr = doc.search("div.media-body")[0].text
     
 # make loop here 
     
-   # book1 = self.new 
-    book_title1 = doc.search("span.full-title")[0].text
-    book_price1 = doc.search("span.display-price")[0].text
+  
     
-    book_title2 = doc.search("span.full-title")[1].text
-    book_price2 = doc.search("span.display-price")[1].text
-    
-    book_title3 = doc.search("span.full-title")[2].text
-    book_price3 = doc.search("span.display-price")[2].text
-    
-    @@titles << book_title1 
-    @@titles << book_title2 
-    @@titles << book_title3
-    @@titles 
-    
-    @@prices << book_price1
-    @@prices << book_price2
-    @@prices << book_price3
-    @@prices 
     
     binding.pry 
   end   
