@@ -4,7 +4,6 @@ class ScraperModule::CLI
   @@titles = []
   @@descr = []
   
-  
   def call 
     question
     scraping_page
@@ -26,8 +25,6 @@ class ScraperModule::CLI
   def scraping_page
     url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
-    
-    # this isn't working 
     
     #book1 = self.new
     # this is the index of the book 
