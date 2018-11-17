@@ -4,16 +4,13 @@ class ScraperModule::Scraper
   @@descr = [] 
   @@all = [] 
   
-  def self.get_page 
-    Nokogiri::HTML(open("https://thegreatestbooks.org/"))
-  end 
-  
-  def self.get_books  
-    self.get_page.css("div.container") 
-  end 
+  def self.scraping_page
+    doc =Nokogiri::HTML(open("https://thegreatestbooks.org/"))
+    
+    book_info = doc.css("div.container") 
 
-  def self.make_books 
-    self.get_books.each do |doc| 
+    
+    book_info.each do |doc| 
       book = Book.new 
       book.index = doc.search("h4")[11].text 
       book.title = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip 
