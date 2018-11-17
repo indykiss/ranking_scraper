@@ -9,11 +9,11 @@ class ScraperModule::Scraper
   end 
   
   def get_books  
-    self.scraping_page.css("div.container") 
+    self.get_page.css("div.container") 
   end 
 
-  def make_books 
-    self.all_info.each do |doc| 
+  def self.make_books 
+    self.get_books.each do |doc| 
       book = Book.new 
       book.index = doc.search("h4")[11].text 
       book.title = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip 
