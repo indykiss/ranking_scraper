@@ -3,13 +3,7 @@ class Scraper
   @@titles = [] 
   @@descr = [] 
   @@all = [] 
-  
-  #def initialize(title=nil, descr=nil)
-  #  @title = title
-  #  @descr = descr
-  #  @@all << self
-  #end
-  
+
   def self.all
     @@all 
   end 
@@ -38,12 +32,37 @@ class Scraper
      binding.pry 
   end 
 
+  def self.titles 
+    puts @@titles 
+  end 
+  
+  def self.answer 
+    input = nil
+    
+    while input != "exit" 
+    puts "Please input the name of the book you want and we will provide a description. Or press exit." 
+    
+    input = gets.strip 
+    
+      if input == @@titles[0] 
+        puts "#{@@titles[0]} is about... #{@@descr[0]}." 
+        puts "Here is the list of books available again." 
+        puts @@titles 
+      else if input == @@titles[1] 
+        puts "#{@@titles[1]} is about... #{@@descr[1]}." 
+        puts "Here is the list of books available again." 
+        puts @@titles else if input == @@titles[2] 
+        puts "#{@@titles[2]} is about... #{@@descr[2]}." 
+        puts "Here is the list of books available again." 
+        puts @@titles 
+      else puts "That's not on our list." 
+      end 
+      end 
+      end 
+  end  
 
 end 
   
-  # Scraping page 
-  # url = HTTParty.get("https://thegreatestbooks.org/") 
-  # doc = Nokogiri::HTML(url) 
   
 =begin book1 = self.new 
 this is the index of the book 
@@ -72,12 +91,9 @@ index1 = doc.search("h4")[11].text
   @@descr << descr2 
   @@descr << descr3 
   #binding.pry end 
-  
-def self.titles 
-puts @@titles 
-end 
 
-def self.answer input = nil while input != "exit" puts "Please input the name of the book you want and we will provide a description. Or press exit." input = gets.strip if input == @@titles[0] puts "#{@@titles[0]} is about... #{@@descr[0]}." puts "Here is the list of books available again." puts @@titles else if input == @@titles[1] puts "#{@@titles[1]} is about... #{@@descr[1]}." puts "Here is the list of books available again." puts @@titles else if input == @@titles[2] puts "#{@@titles[2]} is about... #{@@descr[2]}." puts "Here is the list of books available again." puts @@titles # binding.pry else puts "That's not on our list." end end end end end 
+
+
 
 =end
 
