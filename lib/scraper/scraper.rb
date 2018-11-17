@@ -5,8 +5,13 @@ class ScraperModule::Scraper
   @@all = []
   
   def self.scraping_page
-    url = HTTParty.get("https://thegreatestbooks.org/")
-    doc = Nokogiri::HTML(url)
+    
+    html = open("https://thegreatestbooks.org/")
+    doc = Nokogiri::HTML(html)
+    
+#    url = HTTParty.get("https://thegreatestbooks.org/")
+#    doc = Nokogiri::HTML(url)
+    
 
     #books = doc.css("div.col-sm-7").text.strip 
 
