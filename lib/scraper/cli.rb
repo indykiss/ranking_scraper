@@ -28,27 +28,34 @@ class ScraperModule::CLI
   end 
 
   
-  def self.scraping_page
+  def scraping_page
     url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
     
-    
     # this isn't working 
     
-    book1 = self.new
+    #book1 = self.new
+    # this is the index of the book 
     index1 = doc.search("h4")[11].text
-    title1 = doc.search("h4")[0].text
+    # this gives me the index + title + author for simplicity 
+    title1 = doc.search("h4")[0].text.gsub(/\s+/, ' ')
+    # this gives me the beginning part of the book description 
     descr1 = doc.search("div.media-body")[0].text
+
     book1 = [index1, title1, descr1]
     
-    book2 = self.new
-    index2 = doc.search("h4")[11].text
-    title2 = doc.search("h4")[0].text
-    descr2 = doc.search("div.media-body")[0].text
-    book2 = [index2, title2, descr2]
-
-    binding.pry 
     
+    #book2 = self.new
+    index2 = doc.search("h4")[11].text
+    title2 = doc.search("h4")[1].text.gsub(/\s+/, ' ')
+    descr2 = doc.search("div.media-body")[1].text
+    book2 = [index2, title2, descr2]
+    
+
+    #book_list = [book1, book2]
+    @@titles << title1
+    @@titles << title2
+    @@titles 
   end 
     
 
