@@ -1,22 +1,22 @@
 # I make each individual object of "book"
 
 
-=begin 
+
 class ScraperModule::Book 
-  attr_accessor :title, :descr, :index, :book_object  
-  @@all = []
-  @@titles = []
+  attr_accessor :title, :descr, :index  
+ @@all = []
+  
+  def initialize
+    @@all << self 
+  end 
   
   def self.all
-    @@all
-  end
-
-  #def initialize(title = nil, descr = nil)
-  #  @title = title 
-  #  @descr = descr 
-  #  @@titles << self.title
-  #  @@all << self 
-  #end 
+    @@all 
+  end 
+  
+  def self.reset_all 
+    @@all.clear 
+  end 
   
   def book_object
     @book_object ||= ScraperModule::Scraper.scraping_page 
@@ -34,4 +34,3 @@ class ScraperModule::Book
 
 end 
 
-=end 

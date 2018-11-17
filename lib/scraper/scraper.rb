@@ -9,11 +9,11 @@ class ScraperModule::Scraper
     doc = Nokogiri::HTML(html) 
   end 
   
-  def self.all_info 
+  def all_info 
     self.scraping_page.css("div.container") 
     end 
 
-  def self.scraping_page
+  def self.make_page
     
     self.all_info.each do |doc| 
       book = Book.new 
