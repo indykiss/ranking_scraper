@@ -5,7 +5,7 @@ class ScraperModule::Scraper
   
 
   
-  def scraping_page
+  def self.scraping_page
     url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
     
@@ -42,12 +42,12 @@ class ScraperModule::Scraper
     @@descr << descr3
   end 
   
-  def titles 
+  def self.titles 
     puts @@titles
   end 
   
   
-  def answer  
+  def self.answer  
     input = nil 
     
     while input != "exit"

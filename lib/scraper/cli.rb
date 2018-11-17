@@ -7,21 +7,18 @@ class ScraperModule::CLI
   def call 
     question
     ScraperModule::Scraper.scraping_page
-    titles 
-    answer 
+    ScraperModule::Scraper.titles 
+    ScraperModule::Scraper.answer 
     bye
   end 
   
   def question 
     puts "Welcome to book scraper!"
-    puts "We have..."
+    puts "We have the following books..."
   end  
-  
 
   def bye 
     puts "Thanks for coming."
   end 
-  
-
   
 end 
