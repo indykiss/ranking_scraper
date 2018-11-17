@@ -18,8 +18,11 @@ class ScraperModule::Scraper
       book.index = doc.search("h4")[11].text 
       book.title = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip 
       book.descr = doc.search("div.media-body")[0].text.strip 
-      binding.pry 
+      @@all << self 
+     
     end 
+    @@all 
+     binding.pry 
   end 
 
 
