@@ -1,8 +1,6 @@
 
 class ScraperModule::CLI 
   attr_accessor :title, :price 
-  @@titles = []
-  @@descr = []
   
   def call 
     question
