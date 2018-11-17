@@ -4,13 +4,27 @@ class Scraper
   @@descr = [] 
   @@all = [] 
   
+  #def initialize(title=nil, descr=nil)
+  #  @title = title
+  #  @descr = descr
+  #  @@all << self
+  #end
+  
+  def self.all
+    @@all 
+  end 
+  
+  def self.reset_all 
+    @@all.clear 
+  end 
+  
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
    doc = Nokogiri::HTML(url)     
    book_info = doc.css("div.container") 
     
     book_info.each do |doc| 
-      book = Book.new 
+      book = self.new 
       book.index = doc.search("h4")[11].text 
       book.title = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip 
       book.descr = doc.search("div.media-body")[0].text.strip 
