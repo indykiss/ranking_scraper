@@ -10,6 +10,7 @@ class ScraperModule::Scraper
 
     #books = doc.css("div.col-sm-7").text.strip 
 
+#sad face 
 
     doc.search("h2").each do |h2|
       @@titles << h2.text # different
