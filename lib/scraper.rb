@@ -6,9 +6,9 @@ require_relative "./scraper/version"
 require_relative './scraper/scraper'
 require_relative './scraper/cli'
 
-module ScraperModule
+#module ScraperModule
   #code here
-end
+#end
 
   
   

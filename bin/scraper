@@ -7,7 +7,7 @@ require "open-uri"
 require "httparty"
 
 
-ScraperModule::CLI.new.call
+CLI.new.call
 
 
 

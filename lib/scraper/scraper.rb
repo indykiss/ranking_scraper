@@ -15,7 +15,7 @@ class Scraper
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
    doc = Nokogiri::HTML(url)     
-   book_info = doc.css("div.container") 
+   book_info = doc.css("div.col-sm-7") 
     
     book_info.each do |doc| 
       book = self.new 
@@ -59,6 +59,7 @@ class Scraper
       end 
       end 
       end 
+    end 
   end  
 
 end 
