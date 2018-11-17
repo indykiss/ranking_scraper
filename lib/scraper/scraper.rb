@@ -9,11 +9,11 @@ class ScraperModule::Scraper
     doc = Nokogiri::HTML(html) 
   end 
   
-  def all_info 
+  def self.all_info 
     self.scraping_page.css("div.container") 
     end 
 
-  def make_book 
+  def self.scraping_page
     
     self.all_info.each do |doc| 
       book = Book.new 
@@ -23,7 +23,9 @@ class ScraperModule::Scraper
       binding.pry 
     end 
   end 
-  
+
+
+end 
   
   # Scraping page 
   # url = HTTParty.get("https://thegreatestbooks.org/") 
