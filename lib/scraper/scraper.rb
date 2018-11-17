@@ -8,7 +8,6 @@ class ScraperModule::Scraper
     doc =Nokogiri::HTML(open("https://thegreatestbooks.org/"))
     
     book_info = doc.css("div.container") 
-
     
     book_info.each do |doc| 
       book = Book.new 

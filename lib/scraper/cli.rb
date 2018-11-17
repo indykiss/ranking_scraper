@@ -3,7 +3,7 @@ class ScraperModule::CLI
 
   def call 
     question
-    ScraperModule::Scraper.make_page
+    ScraperModule::Scraper.scraping_page
     ScraperModule::Scraper.titles 
     ScraperModule::Scraper.answer 
     bye
