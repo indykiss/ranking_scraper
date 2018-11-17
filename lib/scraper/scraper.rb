@@ -4,11 +4,11 @@ class ScraperModule::Scraper
   @@descr = [] 
   @@all = [] 
   
-  def get_page 
+  def self.get_page 
     Nokogiri::HTML(open("https://thegreatestbooks.org/"))
   end 
   
-  def get_books  
+  def self.get_books  
     self.get_page.css("div.container") 
   end 
 
