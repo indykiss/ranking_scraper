@@ -1,4 +1,5 @@
 # I make each individual object of "book"
+#still working
 
 =begin 
 class ScraperModule::scraping_pageBook 
