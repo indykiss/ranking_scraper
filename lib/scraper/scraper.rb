@@ -8,6 +8,10 @@ class ScraperModule::Scraper
     url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
     
+    books = doc.css("div.col-sm-7").text  
+    
+    binding.pry 
+    
     book1 = self.new
     # this is the index of the book 
     index1 = doc.search("h4")[11].text
