@@ -1,13 +1,13 @@
-class ScraperModule::Scraper 
+class Scraper 
   attr_accessor :title, :descr, :index 
   @@titles = [] 
   @@descr = [] 
   @@all = [] 
   
   def self.scraping_page
-    doc =Nokogiri::HTML(open("https://thegreatestbooks.org/"))
-    
-    book_info = doc.css("div.container") 
+   url = HTTParty.get("https://thegreatestbooks.org/") 
+   doc = Nokogiri::HTML(url)     
+   book_info = doc.css("div.container") 
     
     book_info.each do |doc| 
       book = Book.new 

@@ -1,11 +1,11 @@
 
-class ScraperModule::CLI 
+class CLI 
 
   def call 
     question
-    ScraperModule::Scraper.scraping_page
-    ScraperModule::Scraper.titles 
-    ScraperModule::Scraper.answer 
+    Scraper.scraping_page
+    Scraper.titles 
+    Scraper.answer 
     bye
   end 
   
