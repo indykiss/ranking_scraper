@@ -5,21 +5,18 @@ class ScraperModule::Scraper
   @@all = []
   
   def self.scraping_page
-    
     html = open("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(html)
   
+container = doc.css("div.container")  
+
 index = doc.search("h4")[11].text    
 titles = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip
 descr = doc.search("div.media-body")[0].text.strip 
     
-    #html.search("h4").each do |h2|
-     # @@titles << h4.text # different
-    #end
-    
-    @@titles # always the same
     
     binding.pry 
+    
 
   end
    
