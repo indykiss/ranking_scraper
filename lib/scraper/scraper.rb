@@ -7,15 +7,22 @@ class ScraperModule::Scraper
   def self.scraping_page
     url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
+
+    #books = doc.css("div.col-sm-7").text.strip 
+
+
+    doc.search("h2").each do |h2|
+      @@titles << h2.text # different
+    end
     
-    books = doc.css("div.col-sm-7").text.strip 
+    @@titles # always the same
     
-    #binding.pry 
-  
-    books.each do |i|
-      puts "Please work" + books.css("h2")[i].text 
-    end 
-    end 
+    binding.pry 
+  end
+   
+   
+   
+
     
 
 
