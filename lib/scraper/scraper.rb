@@ -8,27 +8,27 @@ class ScraperModule::Scraper
     
     html = open("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(html)
+  
+index = doc.search("h4")[11].text    
+titles = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip
+descr = doc.search("div.media-body")[0].text.strip 
     
-#    url = HTTParty.get("https://thegreatestbooks.org/")
-#    doc = Nokogiri::HTML(url)
-    
-
-    #books = doc.css("div.col-sm-7").text.strip 
-
-#sad face 
-
-    doc.search("h2").each do |h2|
-      @@titles << h2.text # different
-    end
+    #html.search("h4").each do |h2|
+     # @@titles << h4.text # different
+    #end
     
     @@titles # always the same
     
     binding.pry 
+
   end
    
    
    
 
+# Scraping page 
+#    url = HTTParty.get("https://thegreatestbooks.org/")
+#    doc = Nokogiri::HTML(url)
     
 
 
