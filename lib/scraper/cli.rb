@@ -3,12 +3,8 @@ class ScraperModule::CLI
   attr_accessor :title, :price 
   @@all = []
   @@titles = []
-  @@prices = []
+  @@descr = []
   
-  def initialize
-    @title = title 
-    @price = price 
-  end 
   
   def call 
     question
@@ -38,7 +34,7 @@ class ScraperModule::CLI
     # this is the index of the book 
     index1 = doc.search("h4")[11].text
     # this gives me the index + title + author for simplicity 
-    title1 = doc.search("h4")[0].text.gsub(/\s+/, ' ')
+    title1 = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip
     # this gives me the beginning part of the book description 
     descr1 = doc.search("div.media-body")[0].text
 
@@ -47,15 +43,24 @@ class ScraperModule::CLI
     
     #book2 = self.new
     index2 = doc.search("h4")[11].text
-    title2 = doc.search("h4")[1].text.gsub(/\s+/, ' ')
+    title2 = doc.search("h4")[1].text.gsub(/\s+/, ' ').strip
     descr2 = doc.search("div.media-body")[1].text
     book2 = [index2, title2, descr2]
+    
+    index3 = doc.search("h4")[11].text
+    title3 = doc.search("h4")[2].text.gsub(/\s+/, ' ').strip 
+    descr3 = doc.search("div.media-body")[2].text
+    book3 = [index3, title3, descr3]
     
 
     #book_list = [book1, book2]
     @@titles << title1
     @@titles << title2
-    @@titles 
+    @@titles << title3
+    
+    @@descr << descr1
+    @@descr << descr2
+    @@descr << descr3
   end 
     
 
@@ -64,18 +69,18 @@ class ScraperModule::CLI
     input = nil 
     
     while input != "exit"
-      puts "Please input the name of the book you want and we will provide price. Or press exit."  
+      puts "Please input the name of the book you want and we will provide a description. Or press exit."  
     
       input = gets.strip
 
         if input == @@titles[0]
-          puts "#{@@titles[0]} is available and costs #{@@prices[0]}."
+          puts "#{@@titles[0]} is available and is about: #{@@descr[0]}."
         else if input == @@titles[1]
-          puts "#{@@titles[1]} is available and costs #{@@prices[1]}."
+          puts "#{@@titles[1]} is available and is about: #{@@descr[1]}."
         else if input == @@titles[2]
-          puts "#{@@titles[2]} is available and costs #{@@prices[2]}."
+          puts "#{@@titles[2]} is available and is about: #{@@descr[2]}."
           
-          binding.pry 
+         # binding.pry 
         else 
           puts "That's not on our list."
         end   
