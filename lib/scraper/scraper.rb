@@ -40,7 +40,7 @@ class ScraperModule::Scraper
     @@descr << descr2
     @@descr << descr3
     
-    binding.pry
+    #binding.pry
   end 
   
   def self.titles 

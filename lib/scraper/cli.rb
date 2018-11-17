@@ -1,7 +1,6 @@
 
 class ScraperModule::CLI 
-  attr_accessor :title, :price 
-  
+
   def call 
     question
     ScraperModule::Scraper.scraping_page
