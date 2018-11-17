@@ -8,15 +8,17 @@ class ScraperModule::Scraper
     url = HTTParty.get("https://thegreatestbooks.org/")
     doc = Nokogiri::HTML(url)
     
-    books = doc.css("div.col-sm-7").text  
+    books = doc.css("div.col-sm-7").text.strip 
     
+    #binding.pry 
+  
     books.each do |i|
-      
       puts "Please work" + books.css("h2")[i].text 
     end 
+    end 
     
-    binding.pry 
-    
+
+
 =begin  
     book1 = self.new
     #this is the index of the book 
