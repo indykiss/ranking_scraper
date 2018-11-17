@@ -1,6 +1,6 @@
 # I make each individual object of "book"
 
-
+=begin 
 class ScraperModule::scraping_pageBook 
   attr_accessor :title, :descr, :index
   @@titles = []
@@ -23,3 +23,5 @@ class ScraperModule::scraping_pageBook
   end 
 
 end 
+
+=end 
