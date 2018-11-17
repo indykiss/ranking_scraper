@@ -10,10 +10,16 @@ class ScraperModule::Scraper
     
     books = doc.css("div.col-sm-7").text  
     
+    books.each do |i|
+      
+      puts "Please work" + books.css("h2")[i].text 
+    end 
+    
     binding.pry 
     
+=begin  
     book1 = self.new
-    # this is the index of the book 
+    #this is the index of the book 
     index1 = doc.search("h4")[11].text
     # this gives me the index + title + author for simplicity 
     title1 = doc.search("h4")[0].text.gsub(/\s+/, ' ').strip
@@ -21,6 +27,7 @@ class ScraperModule::Scraper
     descr1 = doc.search("div.media-body")[0].text.strip 
     book1 = [index1, title1, descr1]
     
+=begin 
     book2 = self.new
     index2 = doc.search("h4")[11].text
     title2 = doc.search("h4")[1].text.gsub(/\s+/, ' ').strip
@@ -46,6 +53,7 @@ class ScraperModule::Scraper
     
     #binding.pry
   end 
+=end 
   
   def self.titles 
     puts @@titles
