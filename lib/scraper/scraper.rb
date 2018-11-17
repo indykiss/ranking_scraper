@@ -25,12 +25,10 @@ class Scraper
       @@all << book 
       @@titles << book.title 
       @@descr << book.descr
-      binding.pry
     end 
     @@all 
     @@titles 
     @@descr
-     #binding.pry 
   end 
 
   def self.titles 
@@ -45,25 +43,30 @@ class Scraper
     
     input = gets.strip 
     
-      if input == @@titles[0] 
-        puts "#{@@titles[0]} is about... #{@@descr[0]}." 
+    @@all.each do |i|
+      if input == @@index[i] 
+        puts "#{@@titles[i]} is about... #{@@descr[i]}." 
         puts "Here is the list of books available again." 
         puts @@titles 
-      else if input == @@titles[1] 
-        puts "#{@@titles[1]} is about... #{@@descr[1]}." 
-        puts "Here is the list of books available again." 
-        puts @@titles else if input == @@titles[2] 
-        puts "#{@@titles[2]} is about... #{@@descr[2]}." 
-        puts "Here is the list of books available again." 
-        puts @@titles 
-      else puts "That's not on our list." 
-      end 
-      end 
-      end 
     end 
-  end  
-
+  end   
+  end   
+  end 
 end 
+        
+  #    else if input == @@titles[1] 
+  #      puts "#{@@titles[1]} is about... #{@@descr[1]}." 
+  #      puts "Here is the list of books available again." 
+  #      puts @@titles else if input == @@titles[2] 
+  #      puts "#{@@titles[2]} is about... #{@@descr[2]}." 
+  #      puts "Here is the list of books available again." 
+  #      puts @@titles 
+  #    else puts "That's not on our list." 
+   #   end 
+    #  end 
+    #  end 
+    #end 
+
   
   
 =begin book1 = self.new 
