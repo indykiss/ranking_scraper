@@ -16,8 +16,7 @@ class Scraper
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
    doc = Nokogiri::HTML(url)     
-  # book_info = doc.css("div.col-sm-7") 
-    
+
     doc.css("div.col-sm-7").collect do |book|
       book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
@@ -42,12 +41,12 @@ class Scraper
       @@descr
     end 
   end 
-
   
 
   def self.titles 
     puts @@titles 
   end 
+  
   
   def self.answer 
     input = nil 
@@ -55,18 +54,21 @@ class Scraper
     while input != "exit"
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
 
-    input = gets.strip 
+      input = gets.strip 
+
     
     @@titles.each_index do |i|
-      if input = i 
+        if input = i 
         puts "Your selected ranking is: .."
-        puts @@titles[i+1]
+        puts @@titles[i]
         puts "And here is the beginning of the summary:"
         puts @@descr[i]
       else if input != i 
           puts "That's not on our list."
       else 
         return "oops broken loop" 
+        
+        binding.pry
      end
    end 
     
