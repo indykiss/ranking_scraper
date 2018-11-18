@@ -20,8 +20,14 @@ class Scraper
     
     book_info.each do |doc| 
       book = self.new 
-      book.index = doc.search("h4").text.scan(/\d+/).first
-      @@index << [book.index]
+     
+     # i am broken
+     # book.index = doc.search("h4").text.scan(/\d+/).first
+     # @@index << [book.index]
+      
+      # i work but i suck      
+      #book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
+      
       book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
       @@titles << [book.title] 
       book.descr = doc.search("div.media-body").text.strip 
