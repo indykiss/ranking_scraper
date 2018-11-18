@@ -59,17 +59,20 @@ class Scraper
     
     @@titles.each_index do |i|
         if input = i 
-        puts "Your selected ranking is: .."
-        puts @@titles[i]
-        puts "And here is the beginning of the summary:"
-        puts @@descr[i]
-      else if input != i 
-          puts "That's not on our list."
-      else 
-        return "oops broken loop" 
+          puts "Your selected ranking is: .."
+          puts @@titles[i]
+          puts "And here is the beginning of the summary:"
+          puts @@descr[i]
+        else if input != i 
+            puts "That's not on our list."
+        else 
+          return "oops broken loop" 
         
         binding.pry
-     end
+      end 
+      end 
+      end 
+    end 
    end 
     
     # i like this but not sure if it could work 
@@ -78,14 +81,7 @@ class Scraper
     #  puts @@titles[i]
     #  puts @@descr[i]
     #end 
-    
-    
 
-  end 
- 
-  
-  end 
-end 
 
 
 # Under answer method, one of the many reasons why I don't work is because the @@titles and stuff AREN'T ARRAYS OF ARRAYS :(
