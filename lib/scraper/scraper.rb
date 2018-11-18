@@ -25,17 +25,26 @@ class Scraper
       }
       
       puts book_info[:title] 
-      #book_info[0][1]
+
       #book_info[1][0]
+
+      #I work! better but catch 22 :(
+      @@titles << book_info.to_a[0][1].split(/[0-9]+./)
       
-      #yay! this gives us an array of names but 1-50 is weird, plus catch 22 
-      #this works but sucks
-      #book_info.to_a[0][1].split(".")[3]
-      book_info.to_a[0][1].split(".")
-
+      
+      ugly_descr = book_info.to_a[1][1].split(/\n/)
+      
+      ugly_descr.each do |item|
+        if item.length > 30
+          @@descr << item 
+        end 
+      end 
+      
+      @@descr 
+      
       binding.pry
-
     end 
+    #binding.pry 
   end 
 
   
