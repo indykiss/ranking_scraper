@@ -16,18 +16,17 @@ class Scraper
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
    doc = Nokogiri::HTML(url)     
-   book_info = doc.css("div.col-sm-7") 
+  # book_info = doc.css("div.col-sm-7") 
     
-    book_info.each do |doc| 
-      book = self.new 
-     
-        binding.pry
+    doc.css("div.col-sm-7").collect do |book|
+      book_info = {
+        :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
+        :descr => book.css("div.media-body").text.strip
+      }
       
-      book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
-      @@titles << [book.title] 
-      book.descr = doc.search("div.media-body").text.strip
-      @@descr << [book.descr]
-      @@all << [book] 
+      book_info 
+    
+
     end 
       binding.pry
 
@@ -75,6 +74,15 @@ end
     #  end 
     #end 
 
+  
+# First attempt at the loop in scraping_page
+    #book_info.each do |doc| 
+     # book = self.new 
+    #  book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
+     # @@titles << [book.title] 
+    #  book.descr = doc.search("div.media-body").text.strip
+    #  @@descr << [book.descr]
+    #  @@all << [book] 
   
   
 =begin book1 = self.new 
