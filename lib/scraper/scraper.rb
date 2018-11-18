@@ -42,14 +42,13 @@ class Scraper
     
     input = gets.strip 
     
-    @@all.each do |i|
-      if input == @@index[i]
-        puts "#{@@titles[i+1]} is about... #{@@descr[i+1]}." 
+      if input.to_i == 1
+        puts "#{@@titles[0]} is about... #{@@descr[0]}." 
         puts "Here is the list of books available again." 
-        puts @@titles 
+        #puts @@titles 
     end 
   end   
-  end   
+  #end   
   end 
 end 
         
