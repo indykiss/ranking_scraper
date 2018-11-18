@@ -21,22 +21,22 @@ class Scraper
     book_info.each do |doc| 
       book = self.new 
      
-     # i am broken
-     # book.index = doc.search("h4").text.scan(/\d+/).first
-     # @@index << [book.index]
+        binding.pry
       
-      # i work but i suck      
-      #book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
-      
-      book.title = doc.search("h4").text.split("\n")
+      book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
       @@titles << [book.title] 
-      book.descr = doc.search("div.media-body").text.strip.split("...")
+      book.descr = doc.search("div.media-body").text.strip
       @@descr << [book.descr]
       @@all << [book] 
     end 
       binding.pry
 
   end 
+  
+  # i am broken
+     # book.index = doc.search("h4").text.scan(/\d+/).first
+     # @@index << [book.index]
+  
 
   def self.titles 
     puts @@titles 
@@ -50,6 +50,7 @@ class Scraper
     
     input = gets.strip 
     
+    # one of the many reasons why I don't work is because the @@titles and stuff AREN'T ARRAYS OF ARRAYS :(
       if input.to_i == 1
         puts "#{@@titles[0]} is about... #{@@descr[0]}." 
         puts "Here is the list of books available again." 
