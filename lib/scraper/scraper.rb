@@ -21,20 +21,13 @@ class Scraper
     doc.css("div.col-sm-7").collect do |book|
       book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
-        :descr => book.css("div.media-body").text.strip
+        :descr => book.css("div.media-body").text.strip,
+        :index => book.css("h4").text.scan(/\d+/).first
       }
-      
-      book_info 
-    
-
+      puts book_info[:index] 
     end 
-      binding.pry
-
   end 
-  
-  # i am broken
-     # book.index = doc.search("h4").text.scan(/\d+/).first
-     # @@index << [book.index]
+
   
 
   def self.titles 
@@ -49,17 +42,21 @@ class Scraper
     
     input = gets.strip 
     
-    # one of the many reasons why I don't work is because the @@titles and stuff AREN'T ARRAYS OF ARRAYS :(
-      if input.to_i == 1
-        puts "#{@@titles[0]} is about... #{@@descr[0]}." 
-        puts "Here is the list of books available again." 
-        binding.pry 
-        #puts @@titles 
-    end 
-  end   
-  #end   
+  end 
+ 
+  
   end 
 end 
+
+
+# Under answer method, one of the many reasons why I don't work is because the @@titles and stuff AREN'T ARRAYS OF ARRAYS :(
+     # if input.to_i == 1
+      #  puts "#{@@titles[0]} is about... #{@@descr[0]}." 
+       # puts "Here is the list of books available again." 
+       # binding.pry 
+        #puts @@titles 
+        
+    
         
   #    else if input == @@titles[1] 
   #      puts "#{@@titles[1]} is about... #{@@descr[1]}." 
@@ -75,7 +72,7 @@ end
     #end 
 
   
-# First attempt at the loop in scraping_page
+# I WORKED! BUT MADE TOO MANY SEPARATE CLASS METHODS. First attempt at the loop in scraping_page
     #book_info.each do |doc| 
      # book = self.new 
     #  book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
@@ -83,6 +80,10 @@ end
     #  book.descr = doc.search("div.media-body").text.strip
     #  @@descr << [book.descr]
     #  @@all << [book] 
+    
+  # i am broken
+     # book.index = doc.search("h4").text.scan(/\d+/).first
+     # @@index << [book.index]
   
   
 =begin book1 = self.new 
