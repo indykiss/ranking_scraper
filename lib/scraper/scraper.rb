@@ -40,7 +40,6 @@ class Scraper
         end 
       end 
       @@descr
-      #binding.pry
     end 
   end 
 
@@ -58,16 +57,24 @@ class Scraper
     
     input = gets.strip 
     
-    @@titles.zip @@descr 
+    @@titles.each_index do |i|
+      if input = i 
+        puts @@titles[i]
+        puts @@descr[i+1]
+      else 
+        puts "oops"
+     end
+   end 
     
-    @@titles.zip(@@descr).each_index do |title, descr, i|
-      puts @@titles[i]
-      puts @@descr[i]
-    end 
+    # i like this but not sure if it could work 
+    #@@all =@@titles.zip @@descr 
+    #@@titles.zip(@@descr).each_index do |title, descr, i|
+    #  puts @@titles[i]
+    #  puts @@descr[i]
+    #end 
     
     
-    binding.pry
-    
+
   end 
  
   
