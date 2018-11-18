@@ -3,7 +3,6 @@ class Scraper
   @@titles = [] 
   @@descr = [] 
   @@all = [] 
-  @@index = []
 
   
   def self.scraping_page
@@ -43,14 +42,24 @@ class Scraper
     puts @@titles 
   end 
   
+  def self.descr
+    puts @@descr
+  end 
+  
   def self.zip 
-    @@all = @@titles.zip @@descr 
+  # @@all = @@titles.zip @@descr 
+   @@all << @@titles 
+    @@all << @@descr
   end 
   
   def self.all
     @@all 
   end 
   
+  
+  # I'm working on fixing Answer. There's something wrong with my @@titles and @@descr but I can't figure out what 
+  # While inside scraping_page, they're fine 
+  # Maybe I'm misunderstanding something about the class methods? 
   
   def self.answer 
     input = nil 
