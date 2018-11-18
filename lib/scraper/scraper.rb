@@ -28,9 +28,9 @@ class Scraper
       # i work but i suck      
       #book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
       
-      book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
+      book.title = doc.search("h4").text.split("   ")
       @@titles << [book.title] 
-      book.descr = doc.search("div.media-body").text.strip 
+      book.descr = doc.search("div.media-body").text.strip.split("...")
       @@descr << [book.descr]
       @@all << [book] 
     end 
