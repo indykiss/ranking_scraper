@@ -23,10 +23,10 @@ class Scraper
       book.index = doc.search("h4").text.scan(/\d+/).first
       book.title = doc.search("h4").text.gsub(/\s+/, ' ').strip 
       book.descr = doc.search("div.media-body").text.strip 
-      @@all << book 
-      @@titles << book.title 
-      @@descr << book.descr
-      @@index << book.index
+      @@all << [book] 
+      @@titles << [book.title] 
+      @@descr << [book.descr]
+      @@index << [book.index]
     end 
   end 
 
@@ -45,6 +45,7 @@ class Scraper
       if input.to_i == 1
         puts "#{@@titles[0]} is about... #{@@descr[0]}." 
         puts "Here is the list of books available again." 
+        binding.pry 
         #puts @@titles 
     end 
   end   
