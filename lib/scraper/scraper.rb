@@ -75,6 +75,8 @@ class Scraper
     end 
    end 
     
+end 
+
     # i like this but not sure if it could work 
     #@@all =@@titles.zip @@descr 
     #@@titles.zip(@@descr).each_index do |title, descr, i|
