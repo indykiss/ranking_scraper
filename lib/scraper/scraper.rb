@@ -3,6 +3,7 @@ class Scraper
   @@titles = [] 
   @@descr = [] 
   @@all = [] 
+  @@index
 
   def self.all
     @@all 
@@ -25,10 +26,8 @@ class Scraper
       @@all << book 
       @@titles << book.title 
       @@descr << book.descr
+      @@index << book.index
     end 
-    @@all 
-    @@titles 
-    @@descr
   end 
 
   def self.titles 
@@ -39,7 +38,7 @@ class Scraper
     input = nil
     
     while input != "exit" 
-    puts "Please input the name of the book you want and we will provide a description. Or press exit." 
+    puts "Please input the rank of the book you want and we will provide name and description. Or type exit." 
     
     input = gets.strip 
     
