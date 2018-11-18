@@ -3,6 +3,7 @@ class CLI
 
   def call 
     question
+    Scraper.all 
     Scraper.scraping_page
     Scraper.titles 
     Scraper.answer 

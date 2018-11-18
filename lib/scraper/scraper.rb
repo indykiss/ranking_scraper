@@ -5,13 +5,6 @@ class Scraper
   @@all = [] 
   @@index = []
 
-  def self.all
-    @@all 
-  end 
-  
-  def self.reset_all 
-    @@all.clear 
-  end 
   
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
@@ -41,7 +34,7 @@ class Scraper
       @@descr
     end 
     
-    binding.pry
+    #binding.pry
     
   end 
   
@@ -52,7 +45,10 @@ class Scraper
   
   def self.zip 
     @@all = @@titles.zip @@descr 
-    binding.pry 
+  end 
+  
+  def self.all
+    @@all 
   end 
   
   
