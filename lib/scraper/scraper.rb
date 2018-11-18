@@ -50,17 +50,21 @@ class Scraper
   end 
   
   def self.answer 
-    input = nil
+    input = nil 
     
-    while input != "exit" 
-    puts "Please input the rank of the book you want and we will provide name and description. Or type exit." 
+    while input != "exit"
+      puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
+    
+      input = gets.strip 
     
     input = gets.strip 
     
     @@titles.each_index do |i|
       if input = i 
-        puts @@titles[i]
-        puts @@descr[i+1]
+        puts "Your selected ranking is: .."
+        puts @@titles[i+1]
+        puts "And here is the beginning of the summary:"
+        puts @@descr[i]
       else 
         puts "oops"
      end
