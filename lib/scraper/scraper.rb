@@ -54,9 +54,7 @@ class Scraper
     
     while input != "exit"
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
-    
-      input = gets.strip 
-    
+
     input = gets.strip 
     
     @@titles.each_index do |i|
@@ -65,8 +63,10 @@ class Scraper
         puts @@titles[i+1]
         puts "And here is the beginning of the summary:"
         puts @@descr[i]
+      else if input != i 
+          puts "That's not on our list."
       else 
-        puts "oops"
+        return "oops broken loop" 
      end
    end 
     
