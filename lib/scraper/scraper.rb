@@ -3,7 +3,7 @@ class Scraper
   @@titles = [] 
   @@descr = [] 
   @@all = [] 
-  @@index
+  @@index = []
 
   def self.all
     @@all 
@@ -43,8 +43,8 @@ class Scraper
     input = gets.strip 
     
     @@all.each do |i|
-      if input == @@index[i] 
-        puts "#{@@titles[i]} is about... #{@@descr[i]}." 
+      if input == i
+        puts "#{@@titles[i+1]} is about... #{@@descr[i+1]}." 
         puts "Here is the list of books available again." 
         puts @@titles 
     end 
