@@ -33,18 +33,15 @@ class Scraper
       
       
       ugly_descr = book_info.to_a[1][1].split(/\n/)
-      
+    
       ugly_descr.each do |item|
         if item.length > 30
           @@descr << item 
         end 
       end 
-      
-      @@descr 
-      
-      binding.pry
+      @@descr
+      #binding.pry
     end 
- 
   end 
 
   
@@ -60,6 +57,16 @@ class Scraper
     puts "Please input the rank of the book you want and we will provide name and description. Or type exit." 
     
     input = gets.strip 
+    
+    @@titles.zip @@descr 
+    
+    @@titles.zip(@@descr).each_index do |title, descr, i|
+      puts @@titles[i]
+      puts @@descr[i]
+    end 
+    
+    
+    binding.pry
     
   end 
  
