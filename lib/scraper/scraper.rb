@@ -40,6 +40,9 @@ class Scraper
       end 
       @@descr
     end 
+    
+    binding.pry
+    
   end 
   
 
@@ -55,23 +58,24 @@ class Scraper
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
 
       input = gets.strip 
+      
+      puts "meh"
 
-    
     @@titles.each_index do |i|
         if input = i 
           puts "Your selected ranking is: .."
-          puts @@titles[i]
+          puts @@titles[0][i]
           puts "And here is the beginning of the summary:"
           puts @@descr[i]
         else if input != i 
             puts "That's not on our list."
         else 
           return "oops broken loop" 
-        
-        binding.pry
+          binding.pry 
       end 
       end 
       end 
+    binding.pry 
     end 
    end 
     
