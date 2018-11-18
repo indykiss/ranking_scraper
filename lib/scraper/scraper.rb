@@ -28,9 +28,10 @@ class Scraper
       #book_info[0][1]
       #book_info[1][0]
       
-      #yay! this gives us an array of name but 1-50 is weird, plus catch 22 
+      #yay! this gives us an array of names but 1-50 is weird, plus catch 22 
+      #this works but sucks
+      #book_info.to_a[0][1].split(".")[3]
       book_info.to_a[0][1].split(".")
-
 
       binding.pry
 

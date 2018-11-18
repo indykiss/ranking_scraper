@@ -1,0 +1,28 @@
+
+[1mFrom:[0m /home/indykiss/Development/ranking_scraper/lib/scraper/scraper.rb @ line 36 Scraper.scraping_page:
+
+    [1;34m16[0m: [32mdef[0m [1;36mself[0m.[1;34mscraping_page[0m
+    [1;34m17[0m:  url = [1;34;4mHTTParty[0m.get([31m[1;31m"[0m[31mhttps://thegreatestbooks.org/[1;31m"[0m[31m[0m) 
+    [1;34m18[0m:  doc = [1;34;4mNokogiri[0m::HTML(url)     
+    [1;34m19[0m: [1;34m# book_info = doc.css("div.col-sm-7") [0m
+    [1;34m20[0m: 
+    [1;34m21[0m:   doc.css([31m[1;31m"[0m[31mdiv.col-sm-7[1;31m"[0m[31m[0m).collect [32mdo[0m |book|
+    [1;34m22[0m:     book_info = {
+    [1;34m23[0m:       [33m:title[0m => book.css([31m[1;31m"[0m[31mh4[1;31m"[0m[31m[0m).text.gsub([35m[1;35m/[0m[35m[1;35m\s[0m[35m+[1;35m/[0m[35m[0m, [31m[1;31m'[0m[31m [1;31m'[0m[31m[0m).strip,
+    [1;34m24[0m:       [33m:descr[0m => book.css([31m[1;31m"[0m[31mdiv.media-body[1;31m"[0m[31m[0m).text.strip,
+    [1;34m25[0m:     }
+    [1;34m26[0m:     
+    [1;34m27[0m:     puts book_info[[33m:title[0m] 
+    [1;34m28[0m:     [1;34m#book_info[0][1][0m
+    [1;34m29[0m:     [1;34m#book_info[1][0][0m
+    [1;34m30[0m:     
+    [1;34m31[0m:     [1;34m#yay! this gives us an array of names but 1-50 is weird, plus catch 22 [0m
+    [1;34m32[0m:     [1;34m#this works but sucks[0m
+    [1;34m33[0m:     [1;34m#book_info.to_a[0][1].split(".")[3][0m
+    [1;34m34[0m:     book_info.to_a[[1;34m0[0m][[1;34m1[0m].split([31m[1;31m"[0m[31m.[1;31m"[0m[31m[0m)
+    [1;34m35[0m: 
+ => [1;34m36[0m:     binding.pry
+    [1;34m37[0m: 
+    [1;34m38[0m:   [32mend[0m 
+    [1;34m39[0m: [32mend[0m 
+
