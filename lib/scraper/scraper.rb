@@ -4,6 +4,8 @@ class Scraper
   @@titles = [] 
   @@descr = [] 
   @@all = [] 
+  @titles = []
+  @descr = [] 
 
   
   def self.scraping_page
@@ -17,24 +19,22 @@ class Scraper
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,
       }
-      
-      binding.pry 
-      
+
       puts book_info[:title] 
 
       #book_info[1][0]
 
       #I work! better but catch 22 :(
-      @@titles << book_info.to_a[0][1].split(/[0-9]+./)
+      @titles << book_info.to_a[0][1].split(/[0-9]+./)
       
       ugly_descr = book_info.to_a[1][1].split(/\n/)
     
       ugly_descr.each do |item|
         if item.length > 30
-          @@descr << item 
+          @descr << item 
         end 
       end 
-      @@descr
+      @descr
     end 
     
    # binding.pry
@@ -42,18 +42,18 @@ class Scraper
   end 
 
   def self.titles 
-    return @@titles 
+    return @titles 
     binding.pry 
   end 
   
   def self.descr
-    puts @@descr
+    puts @descr
   end 
   
   def self.zip 
   # @@all = @@titles.zip @@descr 
-    @@all << @@titles 
-    @@all << @@descr
+    @@all << @titles 
+    @@all << @descr
     #binding.pry 
   end 
   
