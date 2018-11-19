@@ -11,8 +11,8 @@ class Scraper
    doc = Nokogiri::HTML(url)     
     
     doc.css("div.col-sm-7").collect do |book|
-      book = Book.new 
-      book << book_info
+      #book = Book.new 
+     # book << book_info
       book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,
