@@ -1,12 +1,15 @@
 # I make each individual object of "book"
 
-class Book 
+class Module::Book 
   attr_accessor :title, :descr, :index  
  @@all = []
+ @@titles = []
+ @@descr = []
   
-  def initialize(title=nil, descr=nil)
+  def initialize(title=nil, descr=nil, index = nil)
     @title = title
     @descr = descr
+    @index = index 
     @@all << self
   end
   

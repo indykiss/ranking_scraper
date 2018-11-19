@@ -1,4 +1,5 @@
-class Scraper 
+
+class Module::Scraper 
   attr_accessor :title, :descr, :index 
   @@titles = [] 
   @@descr = [] 
@@ -8,12 +9,16 @@ class Scraper
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
    doc = Nokogiri::HTML(url)     
-
+    
     doc.css("div.col-sm-7").collect do |book|
+      book = Module::Book.new 
+      book << book_info
       book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,
       }
+      
+      binding.pry 
       
       puts book_info[:title] 
 
@@ -21,7 +26,6 @@ class Scraper
 
       #I work! better but catch 22 :(
       @@titles << book_info.to_a[0][1].split(/[0-9]+./)
-      
       
       ugly_descr = book_info.to_a[1][1].split(/\n/)
     
@@ -39,7 +43,7 @@ class Scraper
   
 
   def self.titles 
-    puts @@titles 
+    return @@titles 
     binding.pry 
   end 
   
