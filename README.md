@@ -10,7 +10,7 @@ Program
 
 How do I want the gem to function?
 
-Books! Scraping a book site for book name, availability, and price.
+Books! Scraping a book site for book name and price.
 
 # RankingScraper
 
