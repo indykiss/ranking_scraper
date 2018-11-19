@@ -4,8 +4,8 @@ class CLI
   def call 
     question
     Scraper.scraping_page
-    Scraper.all 
-   # Scraper.titles 
+   # Scraper.all 
+    Scraper.titles 
   #  Scraper.answer 
     bye
   end 
