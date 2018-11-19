@@ -7,7 +7,7 @@ require "open-uri"
 require "httparty"
 
 
-ScrapModule::CLI.new.call
+CLI.new.call
 
 
 

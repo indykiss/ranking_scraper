@@ -5,7 +5,7 @@ class CLI
     question
     Scraper.scraping_page
     Scraper.all 
-  #  Book.titles 
+   # Scraper.titles 
   #  Scraper.answer 
     bye
   end 

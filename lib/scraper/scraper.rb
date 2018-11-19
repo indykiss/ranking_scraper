@@ -34,7 +34,6 @@ class Scraper
           @descr << item 
         end 
       end 
-      @descr
     end 
     
    # binding.pry
@@ -51,12 +50,15 @@ class Scraper
   end 
   
   def self.zip 
-  # @@all = @@titles.zip @@descr 
-    @@all << @titles 
-    @@all << @descr
+   @@all = @@titles.zip @@descr 
+  #  @@all << @titles 
+   # @@all << @descr
     #binding.pry 
   end 
   
+  def self.all 
+    @@all 
+  end 
   
   # I'm working on fixing Answer. There's something wrong with my @@titles and @@descr but I can't figure out what 
   # While inside scraping_page, they're fine 
