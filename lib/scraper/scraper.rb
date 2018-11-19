@@ -33,13 +33,14 @@ class Scraper
       @@descr
     end 
     
-    #binding.pry
+   # binding.pry
     
   end 
   
 
   def self.titles 
     puts @@titles 
+    binding.pry 
   end 
   
   def self.descr
@@ -48,12 +49,9 @@ class Scraper
   
   def self.zip 
   # @@all = @@titles.zip @@descr 
-   @@all << @@titles 
+    @@all << @@titles 
     @@all << @@descr
-  end 
-  
-  def self.all
-    @@all 
+    #binding.pry 
   end 
   
   

@@ -17,6 +17,10 @@ class Book
   def self.reset_all 
     @@all.clear 
   end 
+  
+  def self.titles 
+    @@titles
+  end 
 
   #def self.new_fromHTML(doc) 
    # doc = CLI.scraping_page
