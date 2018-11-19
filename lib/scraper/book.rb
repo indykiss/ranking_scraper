@@ -1,6 +1,6 @@
 # I make each individual object of "book"
 
-class Module::Book 
+class ScrapModule::Book 
   attr_accessor :title, :descr, :index  
  @@all = []
  @@titles = []

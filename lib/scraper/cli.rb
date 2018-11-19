@@ -1,10 +1,10 @@
 
-class Module::CLI 
+class ScrapModule::CLI 
 
   def call 
     question
-    Module::Scraper.scraping_page
-    Module::Scraper.all 
+    ScrapModule::Scraper.scraping_page
+    ScrapModule::Scraper.all 
   #  Book.titles 
   #  Scraper.answer 
     bye
