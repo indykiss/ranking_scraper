@@ -1,5 +1,5 @@
 
-class ScrapModule::Scraper 
+class Scraper 
   attr_accessor :title, :descr, :index 
   @@titles = [] 
   @@descr = [] 
@@ -11,7 +11,7 @@ class ScrapModule::Scraper
    doc = Nokogiri::HTML(url)     
     
     doc.css("div.col-sm-7").collect do |book|
-      book = ScrapModule::Book.new 
+      book = Book.new 
       book << book_info
       book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,

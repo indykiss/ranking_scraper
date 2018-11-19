@@ -1,10 +1,10 @@
 # I make each individual object of "book"
 
-class ScrapModule::Book 
+class Book 
   attr_accessor :title, :descr, :index  
- @@all = []
- @@titles = []
- @@descr = []
+    @@all = []
+    @@titles = []
+    @@descr = []
   
   def initialize(title=nil, descr=nil, index = nil)
     @title = title
