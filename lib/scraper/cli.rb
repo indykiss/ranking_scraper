@@ -5,8 +5,8 @@ class ScrapModule::CLI
     question
     ScrapModule::Scraper.scraping_page
     ScrapModule::Scraper.all 
-  #  Book.titles 
-  #  Scraper.answer 
+  #  ScrapModule::Book.titles 
+  #  ScrapModule::Scraper.answer 
     bye
   end 
   
