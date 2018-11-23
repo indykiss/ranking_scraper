@@ -64,14 +64,14 @@ end
     #shouldn't input = gets.strip be here?
     
     while input != "exit"
-      input = gets.strip 
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
+      input = gets.strip 
       i = input.to_i
         
     #@titles.each_with_index do |book, i|
         
           puts "Your selected ranking is: .."
-          puts @titles[0][i]
+          puts @titles[0][i][1..-2]
           puts "And here is the beginning of the summary:"
           puts @descr[i-1]
          # binding.pry 
