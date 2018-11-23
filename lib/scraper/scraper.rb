@@ -38,7 +38,7 @@ class Scraper
     #  puts y 
     #binding.pry
 
-    end 
+    #end 
   end 
 end 
 
@@ -67,6 +67,7 @@ end
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
       i = input.to_i
         
+        binding.pry
     #@titles.each_with_index do |book, i|
         
           puts "Your selected ranking is: .."
@@ -87,7 +88,7 @@ end
 
 end 
 
-
+end 
     # i like this but not sure if it could work 
     #@@all =@@titles.zip @@descr 
     #@@titles.zip(@@descr).each_index do |title, descr, i|
