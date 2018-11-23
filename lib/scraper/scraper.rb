@@ -73,23 +73,25 @@ class Scraper
       input = gets.strip 
       
       puts "meh"
+      
+      puts @descr[1]
+  
 
     ## ugh this isn't working 
-    #       puts @@titles[0]
-    #@@titles.each_index do |i|
-    #    if input = i 
-    #      puts "Your selected ranking is: .."
-    #      puts @@titles[0][i]
-    #      puts "And here is the beginning of the summary:"
-    #      puts @@descr[i]
-    #    else if input != i 
-    #        puts "That's not on our list."
-    #    else 
-    #      return "oops broken loop" 
-    #      binding.pry 
-    #  end 
-    #  end 
-    #  end 
+    @titles.each_index do |i|
+        if input = i 
+          puts "Your selected ranking is: .."
+          puts @titles[0][i]
+          puts "And here is the beginning of the summary:"
+          puts @descr[i]
+        else if input != i 
+            puts "That's not on our list."
+        else 
+          return "oops broken loop" 
+          binding.pry 
+      end 
+      end 
+      end 
     #binding.pry 
     end 
    end 
