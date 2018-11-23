@@ -72,9 +72,6 @@ class Scraper
 
       input = gets.strip 
       
-      puts "meh"
-      
-      puts @descr[1]
   
 
     ## ugh this isn't working 
