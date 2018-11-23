@@ -45,7 +45,7 @@ class Scraper
 end 
 
   def self.titles 
-    return @titles 
+    return @titles
     #binding.pry 
   end 
   
