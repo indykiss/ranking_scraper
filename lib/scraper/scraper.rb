@@ -23,7 +23,7 @@ class Scraper
       #book_info[1][0]
 
       #I work! better but catch 22 :(
-      @titles << book_info.to_a[0][1].split(/[0-9]+./)
+      @titles << book_info.to_a[0][1].split(/[0-9]+[' ']+["."]+/)
       
       ugly_descr = book_info.to_a[1][1].split(/\n/)
       
