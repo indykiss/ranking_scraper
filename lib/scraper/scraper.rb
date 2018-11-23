@@ -33,13 +33,7 @@ class Scraper
         end 
       end 
     end 
-    
-    @all = @titles.zip @descr 
-      @titles.zip(@descr).each_index do |title, descr, i|
-        puts @titles[i]
-        puts @descr[i]
-       end  
-       binding.pry
+
   end 
 
   def self.titles 
@@ -52,16 +46,20 @@ class Scraper
   end 
   
   def self.zip 
-   @titles.zip @descr 
-  #  @@all << @titles 
-   # @@all << @descr
-   
-    #binding.pry 
+      scraping_page
+      
+      @titles.zip(@descr).each{|x,y|}
+          puts x 
+          puts y 
+    end 
+
   end 
   
   def self.all 
     @@all 
   end 
+  
+  
   
   def self.answer 
     input = nil 
