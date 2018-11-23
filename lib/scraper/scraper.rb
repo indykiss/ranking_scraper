@@ -33,12 +33,9 @@ class Scraper
         end 
       end 
     
-    @titles.zip(@descr).each{|x,y|}
-          puts x 
-          puts y 
-    end 
-    
-     
+    @all = @titles.zip(@descr)
+    @all 
+    binding.pry
   end 
 
   def self.titles 
