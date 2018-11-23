@@ -74,8 +74,15 @@ end
     #@titles.each_with_index do |book, i|
         
         if i = 49 
+          puts "Your selected book is: "
+          puts "Candide by Voltaire"
+          puts "Here is the beginning of the summary:"
           puts "Candide, ou l'Optimisme is a French satire written in 1759 by Voltaire, a philosopher of the Age of Enlightenment. Candide is characterized by its sarcastic tone and its erratic, fantastical, an..."
-        
+        else if i = 50 
+          puts "Your selected book is: "
+          puts "The Canterbury Tales by Geoffrey Chaucer"
+          puts "Here is the beginning of the summary:"
+          puts "With their astonishing diversity of tone and subject matter, The Canterbury Tales have become one of the touchstones of medieval literature. Translated here into modern English, these tales of a mo..."
         else 
           puts "Your selected book is: "
           puts @titles[0][i][1..-2]
