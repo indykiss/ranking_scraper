@@ -58,6 +58,7 @@ end
 
 
   def self.answer 
+    scraping_page
     input = nil 
     
     #shouldn't input = gets.strip be here?
@@ -67,7 +68,6 @@ end
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
       i = input.to_i
         
-        binding.pry
     #@titles.each_with_index do |book, i|
         
           puts "Your selected ranking is: .."
