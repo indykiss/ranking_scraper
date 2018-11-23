@@ -25,7 +25,7 @@ class Scraper
       #I work! better but catch 22 :(
       @titles << book_info.to_a[0][1].split(/[0-9]+./)
       
-      ugly_descr = book_info.to_a[1][1].split(/\n/)
+      uglier_descr = book_info.to_a[1][1].split(/\n/).strip
     
       ugly_descr.each do |item|
         if item.length > 10
