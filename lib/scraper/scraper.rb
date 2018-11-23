@@ -1,11 +1,9 @@
 
 class Scraper 
   attr_accessor :title, :descr, :index 
-  @@titles = [] 
-  @@descr = [] 
-  @@all = [] 
   @titles = []
   @descr = [] 
+  @all = []
 
   
   def self.scraping_page
@@ -50,10 +48,11 @@ class Scraper
   end 
   
   def self.zip 
-   @all = @titles.zip @descr 
+   @titles.zip @descr 
   #  @@all << @titles 
    # @@all << @descr
-    binding.pry 
+   
+    #binding.pry 
   end 
   
   def self.all 
