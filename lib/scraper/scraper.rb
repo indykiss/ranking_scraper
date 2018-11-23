@@ -60,27 +60,30 @@ class Scraper
     @@all 
   end 
   
-  # I'm working on fixing Answer. There's something wrong with my @@titles and @@descr but I can't figure out what 
-  # While inside scraping_page, they're fine 
-  # Maybe I'm misunderstanding something about the class methods? 
-  
   def self.answer 
     input = nil 
     
     while input != "exit"
-      puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
-
       input = gets.strip 
-      
-  
+      answering_query
+      puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
+    else 
+      break 
+    end 
+  end
+
+  def self.answering_query
 
     ## ugh this isn't working 
     @titles.each_index do |i|
+        input = gets.strip 
         if input = i 
           puts "Your selected ranking is: .."
           puts @titles[0][i]
           puts "And here is the beginning of the summary:"
           puts @descr[i]
+          binding.pry 
+
         else if input != i 
             puts "That's not on our list."
         else 
