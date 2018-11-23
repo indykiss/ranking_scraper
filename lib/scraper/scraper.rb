@@ -34,8 +34,12 @@ class Scraper
       end 
     end 
     
-   # binding.pry
-    
+    @all = @titles.zip @descr 
+      @titles.zip(@descr).each_index do |title, descr, i|
+        puts @titles[i]
+        puts @descr[i]
+       end  
+       binding.pry
   end 
 
   def self.titles 
