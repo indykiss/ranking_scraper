@@ -32,8 +32,8 @@ class Scraper
           @descr << item 
         end 
       end 
-    end 
-
+    
+     
   end 
 
   def self.titles 
@@ -46,20 +46,23 @@ class Scraper
   end 
   
   def self.zip 
-      scraping_page
-      
+    scraping_page
       @titles.zip(@descr).each{|x,y|}
           puts x 
           puts y 
     end 
-
   end 
   
   def self.all 
     @@all 
   end 
-  
-  
+
+#ending scraper class here for now   
+end 
+
+
+
+
   
   def self.answer 
     input = nil 
@@ -89,7 +92,7 @@ class Scraper
     #binding.pry 
     end 
     
-end 
+
 
     # i like this but not sure if it could work 
     #@@all =@@titles.zip @@descr 
