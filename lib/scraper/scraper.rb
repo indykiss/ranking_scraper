@@ -33,6 +33,11 @@ class Scraper
         end 
       end 
     
+    @titles.zip(@descr).each{|x,y|}
+          puts x 
+          puts y 
+    end 
+    
      
   end 
 
@@ -45,13 +50,6 @@ class Scraper
     puts @descr
   end 
   
-  def self.zip 
-    scraping_page
-      @titles.zip(@descr).each{|x,y|}
-          puts x 
-          puts y 
-    end 
-  end 
   
   def self.all 
     @@all 
