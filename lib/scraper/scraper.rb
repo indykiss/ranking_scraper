@@ -34,7 +34,7 @@ class Scraper
         end 
       end 
       
-      binding.pry
+      #binding.pry
     
     #@titles.zip(@descr).each do |x,y|
     #  puts x 
@@ -47,7 +47,7 @@ end
 
   def self.titles 
     return @titles 
-    binding.pry 
+    #binding.pry 
   end 
   
   def self.descr
