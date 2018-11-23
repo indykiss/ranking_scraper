@@ -34,7 +34,7 @@ class Scraper
         end 
       end 
       
-      #binding.pry
+      binding.pry
     
     #@titles.zip(@descr).each do |x,y|
     #  puts x 
@@ -73,13 +73,17 @@ end
         
     #@titles.each_with_index do |book, i|
         
+        if i = 49 
+          puts "Candide, ou l'Optimisme is a French satire written in 1759 by Voltaire, a philosopher of the Age of Enlightenment. Candide is characterized by its sarcastic tone and its erratic, fantastical, an..."
+        
+        else 
           puts "Your selected book is: "
           puts @titles[0][i][1..-2]
           puts "Here is the beginning of the summary:"
           puts @descr[i-1]
-          puts "If you would like to exit, type exit."
         #  binding.pry 
       end 
+    end 
    # binding.pry 
     end 
 
