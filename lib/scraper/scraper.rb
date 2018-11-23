@@ -73,7 +73,7 @@ end
           puts "Your selected ranking is: .."
           puts @titles[0][i]
           puts "And here is the beginning of the summary:"
-          puts @descr[i]
+          puts @descr[i-1]
          # binding.pry 
       return 
        # else if input != i 
