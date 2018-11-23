@@ -28,7 +28,7 @@ class Scraper
       ugly_descr = book_info.to_a[1][1].split(/\n/)
     
       ugly_descr.each do |item|
-        if item.length > 30
+        if item.length > 10
           @descr << item 
         end 
       end 
