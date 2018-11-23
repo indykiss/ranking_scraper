@@ -70,19 +70,14 @@ end
         
     #@titles.each_with_index do |book, i|
         
-          puts "Your selected ranking is: .."
+          puts "Your selected book is: "
           puts @titles[0][i][1..-2]
-          puts "And here is the beginning of the summary:"
+          puts "Here is the beginning of the summary:"
           puts @descr[i-1]
-         # binding.pry 
-      return 
-       # else if input != i 
-       #     puts "That's not on our list."
-       # else 
-       #   return "oops broken loop" 
+        else
+            puts "That's not on our list."
         #  binding.pry 
-    #  end 
-    #  end 
+      end 
    # binding.pry 
     end 
 
