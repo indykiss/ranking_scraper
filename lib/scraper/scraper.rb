@@ -32,6 +32,8 @@ class Scraper
           @descr << item 
         end 
       end 
+      
+      binding.pry
     
     #@titles.zip(@descr).each do |x,y|
     #  puts x 
@@ -74,8 +76,7 @@ end
           puts @titles[0][i][1..-2]
           puts "Here is the beginning of the summary:"
           puts @descr[i-1]
-        else
-            puts "That's not on our list."
+          puts "If you would like to exit, type exit."
         #  binding.pry 
       end 
    # binding.pry 
@@ -83,7 +84,6 @@ end
 
 end 
 
-end 
     # i like this but not sure if it could work 
     #@@all =@@titles.zip @@descr 
     #@@titles.zip(@@descr).each_index do |title, descr, i|
@@ -100,20 +100,6 @@ end
        # binding.pry 
         #puts @@titles 
         
-    
-        
-  #    else if input == @@titles[1] 
-  #      puts "#{@@titles[1]} is about... #{@@descr[1]}." 
-  #      puts "Here is the list of books available again." 
-  #      puts @@titles else if input == @@titles[2] 
-  #      puts "#{@@titles[2]} is about... #{@@descr[2]}." 
-  #      puts "Here is the list of books available again." 
-  #      puts @@titles 
-  #    else puts "That's not on our list." 
-   #   end 
-    #  end 
-    #  end 
-    #end 
 
   
 # I WORKED! BUT MADE TOO MANY SEPARATE CLASS METHODS. First attempt at the loop in scraping_page
@@ -124,10 +110,7 @@ end
     #  book.descr = doc.search("div.media-body").text.strip
     #  @@descr << [book.descr]
     #  @@all << [book] 
-    
-  # i am broken
-     # book.index = doc.search("h4").text.scan(/\d+/).first
-     # @@index << [book.index]
+
   
   
 =begin book1 = self.new 
