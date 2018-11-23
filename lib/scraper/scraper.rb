@@ -50,10 +50,10 @@ class Scraper
   end 
   
   def self.zip 
-   @@all = @@titles.zip @@descr 
+   @all = @titles.zip @descr 
   #  @@all << @titles 
    # @@all << @descr
-    #binding.pry 
+    binding.pry 
   end 
   
   def self.all 
@@ -63,38 +63,30 @@ class Scraper
   def self.answer 
     input = nil 
     
-    while input != "exit"
-      input = gets.strip 
-      answering_query
-      puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
-    else 
-      break 
-    end 
-  end
+    #shouldn't input = gets.strip be here?
+    
+    #if input != "exit" || "quit"
+     # input = gets.strip 
+    #  puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
 
-  def self.answering_query
+    #@titles.each_with_index do |book, i|
+     #   if input = i 
+      #    puts "Your selected ranking is: .."
+      #    puts @titles[0][i]
+     #     puts "And here is the beginning of the summary:"
+    #      puts @descr[i]
+    #      binding.pry 
 
-    ## ugh this isn't working 
-    @titles.each_index do |i|
-        input = gets.strip 
-        if input = i 
-          puts "Your selected ranking is: .."
-          puts @titles[0][i]
-          puts "And here is the beginning of the summary:"
-          puts @descr[i]
-          binding.pry 
-
-        else if input != i 
-            puts "That's not on our list."
-        else 
-          return "oops broken loop" 
-          binding.pry 
-      end 
-      end 
-      end 
+     #   else if input != i 
+      #      puts "That's not on our list."
+      #  else 
+       
+       #   return "oops broken loop" 
+        #  binding.pry 
+     # end 
+     # end 
     #binding.pry 
     end 
-   end 
     
 end 
 
