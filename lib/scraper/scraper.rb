@@ -74,16 +74,16 @@ end
           puts @titles[0][i]
           puts "And here is the beginning of the summary:"
           puts @descr[i]
-          binding.pry 
+         # binding.pry 
       return 
        # else if input != i 
        #     puts "That's not on our list."
        # else 
        #   return "oops broken loop" 
-          binding.pry 
+        #  binding.pry 
     #  end 
     #  end 
-    binding.pry 
+   # binding.pry 
     end 
 
 end 
