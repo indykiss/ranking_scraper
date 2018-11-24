@@ -3,10 +3,10 @@ class CLI
 
   def call 
     question
-    Scraper.scraping_page
+    Book.scraping_page
    # Scraper.all 
-    Scraper.titles 
-    Scraper.answer 
+    Book.titles 
+    Book.answer 
     bye
   end 
   
