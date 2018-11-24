@@ -10,16 +10,9 @@ class Scraper
    doc = Nokogiri::HTML(url)    
   end 
 
-  def access_container 
+  def self.access_container 
     self.get_page.css("div.col-sm-7")
-  end 
-
-  
-  def self.scraping_page
-    access_container.collect do |book| 
-    Book.making_book_object(book)
-    end 
-  end 
+  end
   
 end 
 

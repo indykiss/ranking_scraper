@@ -11,13 +11,12 @@ class Book
     @descr = descr
   end
   
-  def self.making_book_object(book)
-      self.new(
+  def self.scraping_page
+    Scraper.access_container.collect do |book| 
         book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,
       }
-        )
       puts book_info[:title] 
 
       @@titles << book_info.to_a[0][1].split(/[0-9]+[' ']+["."]+/)
@@ -43,8 +42,8 @@ class Book
     @@all 
   end 
   
-  def self.answer 
-    making_book_object(book)
+  def self.answer
+    scraping_page
     input = nil 
     
     #shouldn't input = gets.strip be here?

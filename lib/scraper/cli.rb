@@ -3,10 +3,10 @@ class CLI
 
   def call 
     question
-    Book.making_book_object
+    #Book.making_book_object
    # Scraper.all 
     Book.titles 
-    Book.answer 
+    Book.answer
     bye
   end 
   
