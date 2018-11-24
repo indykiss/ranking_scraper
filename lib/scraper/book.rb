@@ -12,7 +12,7 @@ class Book
   end
   
   def self.scraping_page
-    Scraper.access_container.collect do |book| 
+    Scraper.get_page.collect do |book| 
         book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,
@@ -28,6 +28,7 @@ class Book
           @@descr << item 
         end 
       end 
+    end 
   end 
 
   def self.titles 

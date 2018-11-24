@@ -5,14 +5,11 @@ class Scraper
   @descr = [] 
   @all = []
 
-  def get_page 
+  def self.get_page 
    url = HTTParty.get("https://thegreatestbooks.org/") 
-   doc = Nokogiri::HTML(url)    
+   doc = Nokogiri::HTML(url) 
+   doc.css("div.col-sm-7")
   end 
-
-  def self.access_container 
-    self.get_page.css("div.col-sm-7")
-  end
   
 end 
 
