@@ -1,5 +1,3 @@
-# I make each individual object of "book"
-
 class Book 
   attr_accessor :title, :descr, :index  
     @@titles = []
@@ -9,8 +7,10 @@ class Book
   def initialize(title=nil, descr=nil)
     @title = title
     @descr = descr
+    @@all << self 
   end
   
+  # I can probably make this into 2-3 methods in refactoring 
   def self.scraping_page
     Scraper.get_page.collect do |book| 
         book_info = {
@@ -43,11 +43,10 @@ class Book
     @@all 
   end 
   
+  # to refactor, make me into 2 methods 
   def self.answer
     scraping_page
     input = nil 
-    
-    #shouldn't input = gets.strip be here?
     
     while input != "exit"
       puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  

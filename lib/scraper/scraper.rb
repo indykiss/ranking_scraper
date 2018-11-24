@@ -1,5 +1,6 @@
 
-class Scraper 
+class Scraper
+  # I can probably delete all these attr_accessors and class methods
   attr_accessor :title, :descr, :index 
   @titles = []
   @descr = [] 
@@ -12,6 +13,10 @@ class Scraper
   end 
   
 end 
+
+
+
+
 
 
     # i like this but not sure if it could work 

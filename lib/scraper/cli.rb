@@ -2,15 +2,13 @@
 class CLI 
 
   def call 
-    question
-    #Book.making_book_object
-   # Scraper.all 
+    welcome
     Book.titles 
     Book.answer
     bye
   end 
   
-  def question 
+  def welcome 
     puts "Welcome to book scraper!"
     puts "We have the following books..."
   end  
