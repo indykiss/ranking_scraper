@@ -11,8 +11,6 @@ class Scraper
    doc = Nokogiri::HTML(url)     
     
     doc.css("div.col-sm-7").collect do |book|
-      #book = Book.new 
-     # book << book_info
       book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,
@@ -20,33 +18,20 @@ class Scraper
 
       puts book_info[:title] 
 
-      #book_info[1][0]
-
-      #I work! better but catch 22 :(
       @titles << book_info.to_a[0][1].split(/[0-9]+[' ']+["."]+/)
       
       ugly_descr = book_info.to_a[1][1].split(/\n/)
       
-    
       ugly_descr.each do |item|
         if item.length > 40
           @descr << item 
         end 
       end 
-      
-
-    #@titles.zip(@descr).each do |x,y|
-    #  puts x 
-    #  puts y 
-    #binding.pry
-
-    #end 
   end 
 end 
 
   def self.titles 
-    return @titles
-    #binding.pry 
+    puts @titles
   end 
   
   def self.descr
@@ -79,21 +64,13 @@ end
   
 end 
 
+
     # i like this but not sure if it could work 
     #@@all =@@titles.zip @@descr 
     #@@titles.zip(@@descr).each_index do |title, descr, i|
     #  puts @@titles[i]
     #  puts @@descr[i]
     #end 
-
-
-
-# Under answer method, one of the many reasons why I don't work is because the @@titles and stuff AREN'T ARRAYS OF ARRAYS :(
-     # if input.to_i == 1
-      #  puts "#{@@titles[0]} is about... #{@@descr[0]}." 
-       # puts "Here is the list of books available again." 
-       # binding.pry 
-        #puts @@titles 
         
 
   
