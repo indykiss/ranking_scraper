@@ -1,26 +1,8 @@
-Project plan:
-
-Plan project + expected outcome 
-Start with project structure. Google is ok. Look at guides and the restaurant example. 
-Start with entry point- the file run 
-Force that into CLI interface 
-Stub out interface M
-ake things real Make objects 
-Program
-
-How do I want the gem to function?
-
-Books! Scraping a book site for book name and price.
 
 # RankingScraper
 
-Add final project plan here. 
-
-Should in total have:
-- Short description
-- Install instructions 
-- Contributor's guide 
-- Link to the license to the code 
+This web scraper scrapes the top 50 books on the https://thegreatestbooks.org/ and presents the titles and ranks to the user. Then the user can select a rank (1 -50) and then be provided the title and a short description of the book. 
+The user can continue selecting ranks to get more book titles and descriptions infinitely, until they type exit. 
 
 ## Installation
 
