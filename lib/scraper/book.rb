@@ -11,7 +11,7 @@ class Book
     @descr = descr
   end
   
-  def making_book_object(book)
+  def self.making_book_object(book)
       self.new(
         book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
@@ -29,7 +29,6 @@ class Book
           @@descr << item 
         end 
       end 
-  end 
   end 
 
   def self.titles 
@@ -63,4 +62,3 @@ class Book
   end 
 
 end 
-

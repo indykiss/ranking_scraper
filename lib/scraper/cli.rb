@@ -3,7 +3,7 @@ class CLI
 
   def call 
     question
-    Book.scraping_page
+    Book.making_book_object
    # Scraper.all 
     Book.titles 
     Book.answer 
