@@ -51,21 +51,20 @@ class ScraperModule::Book
     scraping_page
     input = nil 
     
-    
-    if input = "exit" || "Exit"
-      return "You have chosen to exit the program."
         while input != "exit"
           puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
           input = gets.strip 
           i = input.to_i
-        
-            puts "Your selected book is: "
-            puts @@titles[0][i][1..-2]
-            puts "Here is the beginning of the summary:"
-            puts @@descr[i-1]
+              puts "Your selected book is: "
+              puts @@titles[0][i][1..-2]
+              puts "Here is the beginning of the summary:"
+              puts @@descr[i-1]
+              
+            if input == "exit"
+              return "You have chosen to exit the program."
         end 
     end 
-
+  end 
 end 
 
 
