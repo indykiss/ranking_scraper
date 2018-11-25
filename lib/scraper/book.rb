@@ -27,6 +27,7 @@ class ScraperModule::Book
         if item.length > 40
           @@descr << item 
         end 
+        binding.pry
       end 
     end 
   end 
@@ -45,6 +46,7 @@ class ScraperModule::Book
   
   # to refactor, make me into 2 methods 
   # also to refactor, maybe fix the weird "puts out last index" thing that's going on 
+  
   def self.answer
     scraping_page
     input = nil 
