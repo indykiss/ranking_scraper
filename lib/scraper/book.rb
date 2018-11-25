@@ -52,31 +52,21 @@ class ScraperModule::Book
     input = nil 
     
     
-    while input != "exit"
-      answer_helper
-    if input = "exit"
-      return 
-    else 
-      answer_helper
-    end 
-  end 
-  end 
-      
-    #while input != "exit"
-    
-    
-  def answer_helper
-      puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
-      input = gets.strip 
-      i = input.to_i
+    if input = "exit" || "Exit"
+      return "You have chosen to exit the program."
+        while input != "exit"
+          puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
+          input = gets.strip 
+          i = input.to_i
         
-          puts "Your selected book is: "
-          puts @@titles[0][i][1..-2]
-          puts "Here is the beginning of the summary:"
-          puts @@descr[i-1]
-  #binding.pry
-  
-  end 
-  
+            puts "Your selected book is: "
+            puts @@titles[0][i][1..-2]
+            puts "Here is the beginning of the summary:"
+            puts @@descr[i-1]
+        end 
+    end 
 
 end 
+
+
+
