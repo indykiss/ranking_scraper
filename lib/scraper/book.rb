@@ -1,4 +1,4 @@
-class Book 
+class ScraperModule::Book 
   attr_accessor :title, :descr, :index  
     @@titles = []
     @@descr = []
@@ -12,7 +12,7 @@ class Book
   
   # I can probably make this into 2-3 methods in refactoring 
   def self.scraping_page
-    Scraper.get_page.collect do |book| 
+    ScraperModule::Scraper.get_page.collect do |book| 
         book_info = {
         :title => book.css("h4").text.gsub(/\s+/, ' ').strip,
         :descr => book.css("div.media-body").text.strip,

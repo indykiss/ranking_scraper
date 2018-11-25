@@ -1,10 +1,10 @@
 
-class CLI 
+class ScraperModule::CLI 
 
   def call 
     welcome
-    Book.titles 
-    Book.answer
+    ScraperModule::Book.titles 
+    ScraperModule::Book.answer
     bye
   end 
   

@@ -1,5 +1,5 @@
 
-class Scraper
+class ScraperModule::Scraper
   # I can probably delete all these attr_accessors and class methods
   attr_accessor :title, :descr, :index 
   @titles = []
