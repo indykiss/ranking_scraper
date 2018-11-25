@@ -24,10 +24,9 @@ class ScraperModule::Book
       ugly_descr = book_info.to_a[1][1].split(/\n/)
       
       ugly_descr.each do |item|
-        if item.length > 40
+        if item.length > 83
           @@descr << item 
         end 
-        binding.pry
       end 
     end 
   end 
@@ -61,6 +60,9 @@ class ScraperModule::Book
           puts "Here is the beginning of the summary:"
           puts @@descr[i-1]
       end 
+  binding.pry
+  
   end 
+  
 
 end 
