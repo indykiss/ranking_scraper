@@ -51,7 +51,15 @@ class ScraperModule::Book
     scraping_page
     input = nil 
     
-        while input != "exit"
+  #  if input == "exit"
+      #return "You have chosen to exit the program."
+    
+      #elsif input != "exit"
+          if input == "exit"
+            return "You have chosen to exit the program."
+          end 
+      
+         until input == "exit"
           puts "Please input the rank of the book you want and we will provide name and description. Or press exit."  
           input = gets.strip 
           i = input.to_i
@@ -59,11 +67,12 @@ class ScraperModule::Book
               puts @@titles[0][i][1..-2]
               puts "Here is the beginning of the summary:"
               puts @@descr[i-1]
-              
-            if input == "exit"
-              return "You have chosen to exit the program."
-        end 
-    end 
+          end 
+          
+ 
+    
+        # think about how to direct users who type anything other than 1-50. Elsif? 
+      #  end 
   end 
 end 
 
