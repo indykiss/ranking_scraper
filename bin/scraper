@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative "../config/environment"
-require "bundler/setup"
-require "scraper"
-require "open-uri"
-require "httparty"
+
 
 
 ScraperModule::CLI.new.call
