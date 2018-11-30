@@ -9,13 +9,15 @@ class ScraperModule::Scraper
     get_page.each do |book|
       new_book = ScraperModule::Book.new 
       new_book.title = get_page[0].css("h4 a").children.text
-      new_book.descr = get_page[0].css("div p").children.text.split(/\n/).strip
-      # add the book url too 
+      new_book.descr = get_page[0].css("div p").children.text.strip.split(/\n/)
     end 
+    
+    binding.pry 
+    
   end 
     
     
-    binding.pry
+  #  binding.pry
     #need to iterate instead of collect and make book object 
     #get_page.collect do |book| 
     #    book_info = {
