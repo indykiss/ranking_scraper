@@ -4,7 +4,7 @@ class ScraperModule::CLI
   def call 
     welcome
     print_books
-    answer
+   # answer
     bye
   end 
   

@@ -13,6 +13,10 @@ class ScraperModule::Book
     @@all 
   end 
   
+  def self.save 
+    @@all << self 
+  end 
+  
 
 end 
 
