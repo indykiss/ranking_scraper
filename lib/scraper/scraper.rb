@@ -1,5 +1,7 @@
 
 class ScraperModule::Scraper
+  attr_accessor :title, :descr, :index 
+
 
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 
@@ -7,17 +9,20 @@ class ScraperModule::Scraper
    get_page = doc.css("div.col-sm-7 ol li div.row")
     
     get_page.each do |book|
+      
       new_book = ScraperModule::Book.new 
-      new_book.title = get_page[0].css("h4 a").children.text
-      new_book.descr = get_page[0].css("div p").children.text.strip.split(/\n/)
+      new_book.title = get_page.css("h4 a").children.text
+      new_book.descr = get_page.css("div p").children.text.strip.split(/\n/)
+      
+     ScraperModule::Book.all << new_book  
+
+    #binding.pry 
+
     end 
     
-    binding.pry 
-    
+
   end 
     
-    
-  #  binding.pry
     #need to iterate instead of collect and make book object 
     #get_page.collect do |book| 
     #    book_info = {
