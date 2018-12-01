@@ -11,12 +11,17 @@ class ScraperModule::Scraper
     get_page.each do |book|
       
       new_book = ScraperModule::Book.new 
-      new_book.title = get_page.css("h4 a").children.text
-      new_book.descr = get_page.css("div p").children.text.strip.split(/\n/)
+      
+      new_book.title = book.css("h4").text.gsub(/\s+/, ' ').strip
+      #new_book.title = book.css("h4 a").children.text
+      
+      new_book.descr = book.css("div.media-body").text.strip.split(/\n/)
+      
+     # new_book.descr = get_page[i].css("div p").children.text.strip.split(/\n/)
       
      ScraperModule::Book.all << new_book  
 
-    #binding.pry 
+    binding.pry 
 
     end 
     
