@@ -14,7 +14,7 @@ class ScraperModule::Scraper
         new_book.index = book.search("h4").text.gsub(/[^0-9]/, '')
         new_book.title = book.search("h4 a")[i].text.gsub(/\s+/, ' ')
         new_book.descr = book.search("div p")[i].children.text.strip
-        
+
           # new_book.title = book.search("h4 a")[i].text.gsub(/\s+/, '')
            #new_book.title = book.css("h4 a").children.text
       
@@ -24,7 +24,7 @@ class ScraperModule::Scraper
       
      ScraperModule::Scraper.all << new_book
 
-  #  binding.pry 
+    binding.pry 
 
     end 
     

@@ -17,7 +17,6 @@ class ScraperModule::Book
     @@all << self 
   end 
   
-
 end 
 
 
