@@ -18,27 +18,20 @@ class ScraperModule::CLI
   end 
 
 
-  def answer
-    ScraperModule::Scraper.scraping_page
-    input = nil 
-    
-    while input != "exit" || "Exit"
+  def menu
+    input = ""
+    while input != "exit"
+      puts "What book do you want to read?"
       input = gets.strip
-      
-      if input.to_i - 1 <= ScraperModule::Book.all.size
-        book = ScraperModule::Book.all[input.to_i - 1]
-        
+
+      if input.to_i-1 <= ScraperModule::Book.all.size
+        book = ScraperModule::Book.all[input.to_i-1]
+
         puts book.title
-        puts book.descr
-        
-        # would you like to know more? 
-       # binding.pry
-      end 
+      end
     end 
- 
- 
-  end 
- 
+    binding.pry
+    end 
 
 
   
