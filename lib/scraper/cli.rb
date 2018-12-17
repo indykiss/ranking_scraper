@@ -25,14 +25,14 @@ class ScraperModule::CLI
     while input != "exit" || "Exit"
       input = gets.strip
       
-      if input.to_i-1.between?(1,50)
-        book = ScraperModule::Scraper.all[input.to_i-1]
+      if input.to_i - 1 <= ScraperModule::Book.all.size
+        book = ScraperModule::Book.all[input.to_i - 1]
         
         puts book.title
         puts book.descr
         
         # would you like to know more? 
-        binding.pry
+       # binding.pry
       end 
     end 
  
