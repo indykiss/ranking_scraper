@@ -9,20 +9,18 @@ class ScraperModule::Scraper
    
    get_page = doc.search("div.col-xs-12")
     
-    
     get_page.each do |book|
       new_book = ScraperModule::Book.new 
         new_book.index = book.search("h4").text.gsub(/[^0-9]/, '')
         new_book.title = book.search("h4 a").text.gsub(/\s+/, ' ')
         new_book.descr = book.search("div p").children.text.strip
-
+  
         #new_book.index = book.search("h4").text.gsub(/[^0-9]/, '')
           # new_book.title = book.search("h4 a")[i].text.gsub(/\s+/, '')
            #new_book.title = book.css("h4 a").children.text
           # new_book.descr = book.search("div p")[i].children.text.strip
            # new_book.descr = get_page[i].css("div p").children.text.strip.split(/\n/)
     end 
-
 
   end 
     

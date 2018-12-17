@@ -14,7 +14,7 @@ class ScraperModule::CLI
   end  
 
   def print_books
-    puts ScraperModule::Book.all 
+    puts ScraperModule::Book.all
   end 
 
   def answer

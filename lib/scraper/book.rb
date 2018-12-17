@@ -1,7 +1,7 @@
 class ScraperModule::Book 
   attr_accessor :title, :descr, :index  
     @@all = []
-  
+
   def initialize(title=nil, descr=nil, index =nil)
     @title = title
     @descr = descr
@@ -16,6 +16,7 @@ class ScraperModule::Book
   def self.save 
     @@all << self 
   end 
+  
   
 end 
 
