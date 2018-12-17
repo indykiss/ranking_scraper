@@ -18,7 +18,7 @@ class ScraperModule::CLI
   end 
 
 
-  def menu
+  def answer
     input = ""
     while input != "exit"
       puts "What book do you want to read?"
@@ -26,7 +26,6 @@ class ScraperModule::CLI
 
       if input.to_i-1 <= ScraperModule::Book.all.size
         book = ScraperModule::Book.all[input.to_i-1]
-
         puts book.title
       end
     end 
