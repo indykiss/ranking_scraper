@@ -5,48 +5,40 @@ class ScraperModule::CLI
     welcome
     print_books
     answer
-    bye
   end 
   
   def welcome 
     puts "Welcome to book scraper!"
     puts "We have the following books..."
-  end  
-
-  def print_books
+  end 
+  
+  def print_books 
+    ScraperModule::Scraper.scraping_page
     puts ScraperModule::Book.all
   end 
 
+
   def answer
     ScraperModule::Scraper.scraping_page
-    print_books
     input = nil 
     
-    if input == "exit"
-      return "You have chosen to exit the program."
-    end 
+    while input != "exit" || "Exit"
+      input = gets.strip
       
-    until input == "exit"
-        puts "Please input the rank of the book you want and we will provide name and descriptio. Or press exit."  
-      input = gets.strip 
-
-      if input.to_i.between?(1, 50)
-              puts "Your selected book is: "
-              #puts ScraperModule::Book.all[1][i]
-              puts "Here is the beginning of the summary:"
-              puts          
-      else 
-            return "try again"
-          end 
-          end 
-        # think about how to direct users who type anything other than 1-50. Elsif? 
-    binding.pry
-  
+      if input.to_i-1.between?(1,50)
+        book = TechcrunchCli::Story.all[input.to_i-1]
+        
+        puts book.title
+        puts book.descr
+        
+        # would you like to know more? 
+      end 
+    end 
+ 
+ 
   end 
  
 
-  def bye 
-    puts "Thanks for coming."
-  end 
+
   
 end 
