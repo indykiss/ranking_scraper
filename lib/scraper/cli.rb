@@ -32,9 +32,11 @@ class ScraperModule::CLI
           book = ScraperModule::Book.all[input.to_i-1]
           puts "That book is #{book.title}"
           puts "This book is about... #{book.descr}"
-        end
+            else 
+              puts "That's not a number between 1 - 50. Please try again."
     end 
     end 
+  end 
 
 
   
