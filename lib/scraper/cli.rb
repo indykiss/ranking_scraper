@@ -26,12 +26,13 @@ class ScraperModule::CLI
       input = gets.strip
       
       if input.to_i-1.between?(1,50)
-        book = TechcrunchCli::Story.all[input.to_i-1]
+        book = ScraperModule::Scraper.all[input.to_i-1]
         
         puts book.title
         puts book.descr
         
         # would you like to know more? 
+        binding.pry
       end 
     end 
  
