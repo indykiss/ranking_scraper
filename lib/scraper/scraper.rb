@@ -1,7 +1,5 @@
-
 class ScraperModule::Scraper
   attr_accessor :title, :descr, :index 
-
 
   def self.scraping_page
    url = HTTParty.get("https://thegreatestbooks.org/") 

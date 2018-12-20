@@ -2,8 +2,6 @@
 
 require_relative "../config/environment"
 
-
-
 ScraperModule::CLI.new.call
 
 

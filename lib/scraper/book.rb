@@ -13,12 +13,6 @@ class ScraperModule::Book
     @@all[0...-1]
   end 
   
-  
-  def self.save 
-    @@all << self 
-  end 
-  
-  
 end 
 
 
