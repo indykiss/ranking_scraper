@@ -14,9 +14,10 @@ class ScraperModule::CLI
   
   def print_books 
     ScraperModule::Scraper.scraping_page
-    puts ScraperModule::Book.all
+    ScraperModule::Book.all.each_with_index do |book, i|
+      puts "#{i+1}. #{book.title}"
+    end
   end 
-
 
   def answer
     input = ""
@@ -37,7 +38,6 @@ class ScraperModule::CLI
     end 
     end 
   end 
-
 
   
 end 
