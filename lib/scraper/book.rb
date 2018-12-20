@@ -10,7 +10,7 @@ class ScraperModule::Book
   end
 
   def self.all 
-    @@all
+    @@all[0...-1]
   end 
   
   
