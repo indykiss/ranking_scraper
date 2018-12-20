@@ -34,10 +34,14 @@ class ScraperModule::CLI
           puts "That book is #{book.title}"
           puts "This book is about... #{book.descr}"
             
-          elsif input.to_i == 0 || input.to_i > 50
-            puts "That's not a number between 1 - 50. Try again."
+          elsif input.to_i > 50 || input <= 0 
+            puts "That's not a number between 1 - 50."
       end 
     end 
+    puts ""
+    puts "Thanks for coming!"
   end 
   
 end 
+
+
