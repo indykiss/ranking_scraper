@@ -28,9 +28,6 @@ class ScraperModule::CLI
 
       if input.count("a-zA-Z") > 0
         puts "That's not a number between 1 - 50. Try again."
-        
-        elsif input == "exit"
-          return "Thanks for coming!"
 
         elsif input.to_i-1 <= ScraperModule::Book.all.size
           book = ScraperModule::Book.all[input.to_i-1]
@@ -39,7 +36,7 @@ class ScraperModule::CLI
             
           elsif input.to_i == 0 || input.to_i > 50
             puts "That's not a number between 1 - 50. Try again."
-    end 
+      end 
     end 
   end 
   
